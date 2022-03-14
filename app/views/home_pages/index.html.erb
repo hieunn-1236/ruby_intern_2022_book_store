@@ -1,0 +1,12 @@
+<section class="product_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        <%= t ".our_products" %>
+      </h2>
+    </div>
+    <%== pagy_bootstrap_nav(@pagy) %>
+  <div class="row">
+    <%= render @new_products, prices: @prices %>
+  </div>
+</section>
