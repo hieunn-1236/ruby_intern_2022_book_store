@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :users
+  scope "(:locale)", locale: /en|vi/ do
+    resources :users
+    get "/products", to: "pages#products"
+  end
 end

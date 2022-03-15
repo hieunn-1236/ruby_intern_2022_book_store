@@ -1,0 +1,17 @@
+vi:
+  layouts:
+    header:
+      my_account: "Tài khoản của tôi"
+      cart: "Giỏ hàng"
+      bookstore: "Book Store"
+      home: "Trang chủ"
+      about: "Thông tin"
+      products: "Sản phẩm"
+    footer:
+      bookstore: "Book Store"
+      address: "Địa chỉ"
+  pages:
+    products:
+      our_products: "Danh mục sản phẩm"
+      add_to_cart: "Thêm vào giỏ hàng"
+      view_more: "Xem thêm"
