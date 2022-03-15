@@ -18,3 +18,16 @@ en:
       our_products: "Our Products"
       add_to_cart: "Add To Cart"
       view_more: "View More"
+    login:
+      login: "Log In"
+      remember_me: "Remember Me"
+      forgot_password: "Forgot Password?"
+      create: "Create an Account"
+    admin:
+      admin: "Admin"
+      dashboard: "Dashboard"
+      orders: "Orders"
+      category: "Category"
+      products: "Products"
+      users: "Users"
+      users_list: "Users list"
