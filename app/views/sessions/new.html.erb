@@ -1,0 +1,43 @@
+<% provide :title, t(".login") %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xl-10 col-lg-12 col-md-9">
+      <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+          <div class="row">
+            <div class="col-lg-6 d-none d-lg-block "></div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4"><%= t ".login" %></h1>
+                  </div>
+                  <%= form_for :session, html: {class: "user"}, url: login_path do |f| %>
+                    <%= f.label :email %>
+                    <%= f.email_field :email, class: "form-control" %>
+                    <%= f.label :password %>
+                    <%= f.password_field :password, class: "form-control" %>
+                    <%= f.label :remember_me, class: "checkbox inline" do %>
+                      <%= f.check_box :remember_me %>
+                      <span> <%= t ".remember_me" %></span>
+                    <% end %>
+                    <%= f.submit t ".login", class: "btn btn-primary btn-user btn-block" %>
+                  <% end %>
+                  <hr>
+                  <div class="text-center">
+                    <a class="small" href="forgot-password.html">
+                      <%= t ".forgot_password" %>
+                    </a>
+                  </div>
+                  <div class="text-center">
+                    <a class="small" href="register.html">
+                      <%= t ".create" %>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

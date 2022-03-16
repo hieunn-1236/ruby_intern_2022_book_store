@@ -15,6 +15,8 @@ vi:
       our_products: "Danh mục sản phẩm"
       add_to_cart: "Thêm vào giỏ hàng"
       view_more: "Xem thêm"
+    product:
+      add_to_cart: "Thêm vào giỏ hàng"
     login:
       login: "Đăng nhập"
       remember_me: "Ghi nhớ tài khoản"
@@ -28,3 +30,9 @@ vi:
       products: "Sản phẩm"
       users: "Người dùng"
       users_list: "Danh sách người dùng"
+  sessions:
+    new:
+      login: "Đăng nhập"
+      remember_me: "Ghi nhớ tài khoản"
+      forgot_password: "Quên mật khẩu?"
+      create: "Tạo tài khoản"
