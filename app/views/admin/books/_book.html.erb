@@ -9,7 +9,10 @@
         <i class="fa-solid fa-pen-to-square"></i>
       </label>
     <% end %>
-    <%= link_to root_path do %>
+    <%= link_to admin_book_path(book),method: :delete,
+                                      data: {confirm: t("delete_book?")},
+                                      remote: true,
+                                      class: "book_delete" do %>
       <label class="btn btn-danger">
         <i class="fa-solid fa-trash-can"></i>
       </label>

@@ -26,6 +26,8 @@ en:
   action: "Action"
   create_new_book: "Create new book"
   login_required: "Login required"
+  delete_book?: "Are you sure delete this book?"
+  book_not_found: "Book not found"
   admin:
     layouts:
       header:
@@ -62,6 +64,9 @@ en:
         success: "Create new product success"
       form:
         add_book_detail: "Add new book detail"
+      destroy:
+        book_deleted: "Book deleted"
+        delete_fail: "Delete fail"
   layouts:
     header:
       my_account: "My Account"

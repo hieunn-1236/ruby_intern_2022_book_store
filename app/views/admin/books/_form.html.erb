@@ -61,7 +61,7 @@
     <%= f.label :image, t("image") %>
     <%= f.file_field :image,
         {accept: Settings.image_formats,
-         class: "form-control", placeholder: t("input_image") }%>
+         class: "form-control", placeholder: t("input_image")} %>
   </div>
   <div class="col-12">
     <%= f.submit yield(:button_text), class: "btn btn-primary mt-5" %>
