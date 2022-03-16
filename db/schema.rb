@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_13_165905) do
+ActiveRecord::Schema.define(version: 2022_03_15_040543) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "receiver"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2022_03_13_165905) do
 
   create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2022_03_13_165905) do
   create_table "book_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "edition"
     t.integer "quantity"
-    t.decimal "price", precision: 10
     t.bigint "book_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -51,12 +50,13 @@ ActiveRecord::Schema.define(version: 2022_03_13_165905) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.datetime "publish_year"
     t.bigint "publisher_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "price", precision: 10
     t.index ["category_id"], name: "index_books_on_category_id"
     t.index ["name"], name: "index_books_on_name"
     t.index ["publish_year"], name: "index_books_on_publish_year"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2022_03_13_165905) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -104,14 +104,14 @@ ActiveRecord::Schema.define(version: 2022_03_13_165905) do
     t.string "name"
     t.string "address"
     t.string "phone"
-    t.string "description"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "num_star"
-    t.string "content"
+    t.text "content"
     t.bigint "user_id", null: false
     t.bigint "book_id", null: false
     t.datetime "created_at", precision: 6, null: false
