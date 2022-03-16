@@ -1,6 +1,6 @@
 class Admin::BooksController < Admin::AdminController
-  before_action :load_category_vs_publishers, only: %i(new create)
-  before_action :load_book, only: :destroy
+  before_action :load_book_info, only: %i(new create edit update)
+  before_action :load_book, only: %i(update edit destroy)
 
   def index
     @products = Book.search(params[:admin_search]).newest
@@ -11,19 +11,31 @@ class Admin::BooksController < Admin::AdminController
   end
 
   def new
-    @product = Book.new
-    @product.book_details.build
-    @product.book_authors.build
+    @book = Book.new
+    @book.book_details.build
+    @book.book_authors.build
   end
 
   def create
-    @product = Book.new book_params
-    if @product.save
+    @book = Book.new book_params
+    if @book.save
       flash[:success] = t ".success"
       redirect_to admin_books_path
     else
       flash.now[:danger] = t ".error"
       render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @book.update book_params
+      flash[:success] = t "update_book_success"
+      redirect_to admin_root_path
+    else
+      flash.now[:danger] = t "update_book_fail"
+      render :edit
     end
   end
 
@@ -51,7 +63,7 @@ class Admin::BooksController < Admin::AdminController
           .permit(Book::BOOK_ATTRS)
   end
 
-  def load_category_vs_publishers
+  def load_book_info
     @category = Category.pluck(:name, :id)
     @publishers = Publisher.pluck(:name, :id)
     @authors = Author.pluck(:name, :id)
