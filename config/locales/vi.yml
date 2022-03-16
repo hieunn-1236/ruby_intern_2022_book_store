@@ -1,6 +1,8 @@
 vi:
   home: "Trang chủ"
   search: "Tìm kiếm theo tên"
+  invalid: "Email/mật khẩu không hợp lệ"
+  not_exist: "Người dùng không tồn tại"
   layouts:
     header:
       my_account: "Tài khoản của tôi"

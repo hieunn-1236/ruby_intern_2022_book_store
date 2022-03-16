@@ -1,6 +1,8 @@
 en:
   home: "Home"
   search: "Search"
+  invalid: "Invalid email password combination"
+  not_exist: "User doesn't exist"
   layouts:
     header:
       my_account: "My Account"
