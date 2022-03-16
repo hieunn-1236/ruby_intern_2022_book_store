@@ -1,9 +1,37 @@
 vi:
+  title: "Book Store"
   home: "Trang chủ"
   search: "Tìm kiếm theo tên"
   invalid: "Email/mật khẩu không hợp lệ"
   not_exist: "Người dùng không tồn tại"
   book_not_found: "Không tìm thấy sách"
+
+  admin:
+    layouts:
+      header:
+        my_account: "Tài khoản"
+        cart: "Giỏ hàng"
+        bookstore: "Book Store"
+      footer:
+        bookstore: "Book Store"
+        address: "Địa chỉ"
+      left:
+        books: "Sách"
+    books:
+      index:
+        books: Sách
+        book_list: "Tất cả sách"
+        name: "Tên sách"
+        image: "Ảnh"
+        description: "Mô tả"
+        price: "Giá"
+        edit: "Chỉnh sửa"
+        book_count: "Số sách"
+        add_book: "Thêm sách mới"
+      book:
+        delete: "Xóa"
+        edit: "Sửa"
+
   layouts:
     header:
       my_account: "Tài khoản của tôi"
@@ -43,8 +71,11 @@ vi:
       create: "Tạo tài khoản"
   home_pages:
     show:
+      title: "Book detail"
       options: "Tùy chọn"
       publisher: "Nhà sản xuất:"
       author: "Tác giả:"
       publish_year: "Năm sản xuất:"
       quantity: "Số lượng còn lại:"
+    index:
+      title: "Trang chủ"

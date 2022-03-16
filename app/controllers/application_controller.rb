@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  def is_vi_location?
+    params[:locale] == "vi"
+  end
 end
