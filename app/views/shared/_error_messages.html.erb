@@ -1,0 +1,9 @@
+<% if object.errors.any? %>
+  <div id="error_explanation">
+    <ul class="row align-items-center">
+      <% object.errors.full_messages.each do |msg| %>
+        <li class="alert alert-danger col-md-5"><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

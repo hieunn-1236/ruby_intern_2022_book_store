@@ -9,7 +9,7 @@ end
 5.times do
   name = Faker::Book.unique.publisher
   address = Faker::Address.full_address
-  phone = Faker::PhoneNumber.phone_number
+  phone = 1234567890
   description = Faker::Lorem.sentence(word_count: 5)
   Publisher.create!(name: name,
                     address: address,

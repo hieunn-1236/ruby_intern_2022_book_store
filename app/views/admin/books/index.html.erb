@@ -1,10 +1,12 @@
 <% provide :title, t(".books") %>
 <h1 class="h3 mb-2 text-gray-800">
   <%= t ".books" %> |
-  <div class="btn btn-outline-primary">
-    <i class="fas fa-folder-plus"></i>
-    <%= link_to t(".add_book"), "#", class: "link-primary" %>
-  </div>
+  <%= link_to new_admin_book_path do %>
+    <label class="btn btn-outline-primary">
+      <i class="fas fa-folder-plus"></i>
+      <%= t ".add_book" %>
+    </label>
+  <% end %>
 </h1>
 <p class="mb-4">
   <%= t ".book_list" %> |

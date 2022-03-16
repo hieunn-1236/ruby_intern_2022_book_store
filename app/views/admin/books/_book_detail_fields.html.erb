@@ -1,0 +1,22 @@
+<div class="nested-fields row g-3">
+  <div class="col-md-6 required">
+    <%= f.label :edition, t("edition") %>
+    <%= f.text_field :edition,
+          {class: "form-control", placeholder: t("input_edition")} %>
+  </div>
+  <div class="col-md-5 required">
+    <%= f.label :quantity, t("quantity") %>
+    <%= f.number_field :quantity,
+          {class: "form-control",
+          placeholder: t("input_quantity"),
+          min: Settings.min_val} %>
+  </div>
+  <div class="links col-md-1">
+    <label><%= t "action" %></label>
+    <%= link_to_remove_association f do %>
+      <label class="btn btn-danger form-control">
+        <i class="fa-solid fa-trash-can"></i>
+      </label>
+    <% end %>
+  </div>
+</div>

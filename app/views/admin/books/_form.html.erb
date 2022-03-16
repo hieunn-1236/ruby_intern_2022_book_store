@@ -1,0 +1,69 @@
+<%= form_for [:admin, @product], html: {class: "row g-3"} do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="col-md-6 required">
+    <%= f.label :name, t("input_name_label") %>
+    <%= f.text_field :name,
+        {class: "form-control", placeholder: t("input_name")} %>
+  </div>
+  <div class="col-md-6 required">
+    <%= f.label :price, t("input_price_label") %>
+    <%= f.number_field :price,
+        {class: "form-control",
+         placeholder: t("input_price"),
+         min: Settings.min_book_price_length,
+         max: Settings.max_book_price_length} %>
+  </div>
+  <div class="col-md-6 required">
+    <%= f.label :category_id, t("category") %>
+    <%= f.select :category_id,
+        options_for_select(@category),
+                          {selected: @category.first},
+                          {class: "form form-control"} %>
+  </div>
+  <div class="col-md-6 required">
+    <%= f.label :publisher_id, t("publisher") %>
+    <%= f.select :publisher_id,
+        options_for_select(@publishers),
+                          {selected: @publishers.first},
+                          {class: "form form-control"} %>
+  </div>
+  <div class="row g-3">
+    <%= f.fields_for :book_details do |ff| %>
+      <%= render partial: "book_detail_fields", locals: {f: ff} %>
+    <% end %>
+    <div class="col-md-12">
+      <%= link_to_add_association f, :book_details do %>
+        <label class="btn btn-outline-primary">
+          <i class="fas fa-folder-plus"></i>
+          <%= t ".add_book_detail" %>
+        </label>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <%= f.label :publish_year, t("publish_year") %>
+    <%= f.date_field :publish_year, {class: "form-control"} %>
+  </div>
+  <div class="col-md-6">
+    <%= f.label :book_authors, t("book_authors") %>
+    <%= f.select :author_ids,
+        options_for_select(@authors),
+                           {include_blank: true},
+                           multiple: true,
+                           class: "form-control select2" %>
+  </div>
+  <div class="col-md-12 required">
+    <%= f.label :description, t("description") %>
+    <%= f.text_area :description, {class: "form-control",
+                                   placeholder: t("input_description")} %>
+  </div>
+  <div class="col-md-12">
+    <%= f.label :image, t("image") %>
+    <%= f.file_field :image,
+        {accept: Settings.image_formats,
+         class: "form-control", placeholder: t("input_image") }%>
+  </div>
+  <div class="col-12">
+    <%= f.submit yield(:button_text), class: "btn btn-primary mt-5" %>
+  </div>
+<% end %>

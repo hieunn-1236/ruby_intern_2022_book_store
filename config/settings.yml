@@ -1,4 +1,4 @@
-page_items: 12
+page_items: 8
 dollar_to_vnd: 23000
 settings:
   user:
@@ -9,3 +9,23 @@ settings:
       regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     password:
       min_length_6: 6
+book_price_format: /\A\d+(?:\.\d{2})?\z/
+min_book_price_length: 0
+max_book_price_length: 1000000
+max_name_length: 50
+min_phone_length: 10
+max_phone_length: 15
+min_val: 0
+max_edition_length: 255
+max_description_length: 500
+max_address_length: 500
+image_format: ["image/jpeg", "image/gif", "image/png"]
+image_formats: "image/jpeg, image/gif, image/png"
+image_size: 5
+image_limit_x: 100
+image_limit_y: 100
+resize_images: "125x200!"
+thumbnail: "50x50!"
+status_order_new: 0
+image_limit: [150, 150]
+format_price: !ruby/regexp /\A\d+(?:\.\d{2})?\z/
