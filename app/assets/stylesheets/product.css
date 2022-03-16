@@ -7,21 +7,22 @@
 
 /* Columns */
 .p-left-column {
-  width: 65%;
+  width: 40%;
   position: relative;
 }
 
 .p-right-column {
-  width: 35%;
-  margin-top: 60px;
+  width: 60%;
+  margin-top: 15px;
 }
 
 
 /* Left Column */
 .p-left-column img {
-  width: 100%;
+  width: 90%;
   position: absolute;
   left: 0;
+  right: 0;
   top: 0;
   opacity: 1;
   transition: all 0.3s ease;

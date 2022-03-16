@@ -4,12 +4,13 @@
       <%= image_tag "p1.png" %>
       <a href="" class="add_cart_btn">
         <span>
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
           <%= t ".add_to_cart" %>
         </span>
       </a>
     </div>
     <div class="detail-box">
-      <h5> <%= book.name %> </h5>
+      <h5> <%= link_to book.name, home_page_path(book) %> </h5>
       <div class="product_info">
         <h5>
           <%= number_to_currency(prices[book_iteration.index]) %>
