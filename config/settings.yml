@@ -1,2 +1,11 @@
 page_items: 12
 dollar_to_vnd: 23000
+settings:
+  user:
+    username:
+      max_length_50: 50
+    email:
+      max_length_255: 255
+      regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    password:
+      min_length_6: 6
