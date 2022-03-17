@@ -1,5 +1,6 @@
 en:
   home: "Home"
+  search: "Search"
   layouts:
     header:
       my_account: "My Account"

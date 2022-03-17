@@ -1,5 +1,6 @@
 vi:
   home: "Trang chủ"
+  search: "Tìm kiếm theo tên"
   layouts:
     header:
       my_account: "Tài khoản của tôi"

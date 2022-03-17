@@ -11,6 +11,9 @@ class Book < ApplicationRecord
 
   scope :newest, ->{order(created_at: :desc)}
 
+  scope :search,
+        ->(search){where("name LIKE ?", "%#{search}%") if search.present?}
+
   class << self
     def dollar_to_vnd books
       books.map{|book| book.price = book.price * Settings.dollar_to_vnd}
