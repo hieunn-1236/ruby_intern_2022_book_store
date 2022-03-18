@@ -28,7 +28,6 @@ module SessionsHelper
   def login_remember user
     log_in user
     params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-    redirect_back_or user
   end
 
   def remember user

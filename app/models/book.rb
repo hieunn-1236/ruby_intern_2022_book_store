@@ -8,6 +8,8 @@ class Book < ApplicationRecord
   has_many :users, through: :rates
   has_many :order_details, dependent: :destroy
   has_many :orders, through: :order_details
+  has_many :line_items, dependent: :destroy
+
   delegate :name, to: :category, prefix: true, allow_nil: true
   delegate :name, to: :publisher, prefix: true, allow_nil: true
 

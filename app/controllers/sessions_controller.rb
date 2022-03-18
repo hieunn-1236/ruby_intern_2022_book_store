@@ -5,6 +5,11 @@ class SessionsController < ApplicationController
   def create
     if @user.authenticate params[:session][:password]
       login_remember @user
+      if @user.user?
+        redirect_to root_path
+      else
+        redirect_to admin_path
+      end
     else
       flash.now[:danger] = t "invalid"
       render :new
@@ -22,6 +27,6 @@ class SessionsController < ApplicationController
     return if @user
 
     flash[:danger] = t "not_exist"
-    redirect_to :back
+    redirect_to root_url
   end
 end
