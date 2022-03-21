@@ -40,3 +40,17 @@ end
                      book_id: Book.all.pluck(:id).sample
   )
 end
+
+5.times do
+  name = Faker::Book.author
+  description = Faker::Lorem.sentence(word_count: 10)
+  Author.create!(name: name,
+                  description: description
+  )
+end
+
+50.times do
+  BookAuthor.create!(book_id: Book.all.pluck(:id).sample,
+                      author_id: Author.all.pluck(:id).sample
+  )
+end

@@ -3,6 +3,7 @@ en:
   search: "Search"
   invalid: "Invalid email password combination"
   not_exist: "User doesn't exist"
+  book_not_found: "Book not found"
   layouts:
     header:
       my_account: "My Account"
@@ -40,3 +41,10 @@ en:
       remember_me: "Remember Me"
       forgot_password: "Forgot Password?"
       create: "Create an Account"
+  home_pages:
+    show:
+      options: "Options"
+      publisher: "Publisher:"
+      author: "Author:"
+      publish_year: "Publish year:"
+      quantity: "Quantity:"
