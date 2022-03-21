@@ -1,9 +1,37 @@
 en:
+  title: "Book Store"
   home: "Home"
   search: "Search"
   invalid: "Invalid email password combination"
   not_exist: "User doesn't exist"
   book_not_found: "Book not found"
+
+  admin:
+    layouts:
+      header:
+        my_account: "My Account"
+        cart: "Cart"
+        bookstore: "Book Store"
+      footer:
+        bookstore: "Book Store"
+        address: "Address"
+      left:
+        books: "Books"
+    books:
+      index:
+        books: "Books"
+        book_list: "Book list"
+        name: "Name"
+        image: "Image"
+        description: "Description"
+        price: "Price"
+        edit: "Edit"
+        book_count: "All book"
+        add_book: "Add book"
+      book:
+          delete: "Delete"
+          edit: "Edit"
+
   layouts:
     header:
       my_account: "My Account"
@@ -43,8 +71,11 @@ en:
       create: "Create an Account"
   home_pages:
     show:
+      title: "Book detail"
       options: "Options"
       publisher: "Publisher:"
       author: "Author:"
       publish_year: "Publish year:"
       quantity: "Quantity:"
+    index:
+      title: "Home"

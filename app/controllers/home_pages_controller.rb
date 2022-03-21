@@ -24,8 +24,4 @@ class HomePagesController < ApplicationController
     flash[:danger] = t "book_not_found"
     redirect_to root_path
   end
-
-  def is_vi_location?
-    params[:locale] == "vi"
-  end
 end

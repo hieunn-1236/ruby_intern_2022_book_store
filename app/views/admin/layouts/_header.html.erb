@@ -3,6 +3,7 @@
     <div class="header_top">
       <div class="container-fluid">
         <div class="top_nav_container">
+         <%= link_to t(".bookstore"), home_pages_path, class: "navbar-brand" %>
           <%= form_tag(home_pages_path, method: :get, class: "search_form") do %>
             <%= text_field_tag :search, params[:search],
                                         class: "form-control",
@@ -15,8 +16,8 @@
             <span><%= link_to t("vi"), locale: :vi %></span>
             <span><%= link_to t("en"), locale: :en %></span>
             <a href="" class="account-link">
-              <i class="fa fa-user" aria-hidden="true"></i>
               <span>
+              <i class="fa fa-user" aria-hidden="true"></i>
                  <%= link_to t(".my_account"), login_path %>
               </span>
             </a>
@@ -28,26 +29,6 @@
             </a>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="header_bottom">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <%= link_to t(".bookstore"), home_pages_path, class: "navbar-brand" %>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""> </span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ">
-              <li class="nav-item">
-                <%= link_to t("home"), home_pages_path, class: "nav-link" %>
-              </li>
-              <li class="nav-item">
-                <%= link_to t(".admin"), admin_books_path, class: "nav-link" %>
-              </li>
-            </ul>
-          </div>
-        </nav>
       </div>
     </div>
   </header>
