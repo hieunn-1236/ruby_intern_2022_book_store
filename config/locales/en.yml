@@ -3,15 +3,19 @@ en:
   home: "Home"
   search: "Search"
   invalid: "Invalid email password combination"
-  not_exist: "User doesn't exist"
+  not_exist: "Not exist"
+  success: "Success!"
+  failure: "Failure!"
   book_not_found: "Book not found"
-
+  access: "You don't have permission to access this page"
   admin:
     layouts:
       header:
         my_account: "My Account"
         cart: "Cart"
         bookstore: "Book Store"
+        login: "Log in"
+        logout: "Log out"
       footer:
         bookstore: "Book Store"
         address: "Address"
@@ -29,9 +33,8 @@ en:
         book_count: "All book"
         add_book: "Add book"
       book:
-          delete: "Delete"
-          edit: "Edit"
-
+        delete: "Delete"
+        edit: "Edit"
   layouts:
     header:
       my_account: "My Account"

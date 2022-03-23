@@ -3,15 +3,19 @@ vi:
   home: "Trang chủ"
   search: "Tìm kiếm theo tên"
   invalid: "Email/mật khẩu không hợp lệ"
-  not_exist: "Người dùng không tồn tại"
+  not_exist: "Không tồn tại"
+  success: "Thành công"
+  failure: "Thất bại"
+  access: "Bạn không có quyền truy cập trang này"
   book_not_found: "Không tìm thấy sách"
-
   admin:
     layouts:
       header:
         my_account: "Tài khoản"
         cart: "Giỏ hàng"
         bookstore: "Book Store"
+        login: "Log in"
+        logout: "Log out"
       footer:
         bookstore: "Book Store"
         address: "Địa chỉ"
@@ -19,7 +23,7 @@ vi:
         books: "Sách"
     books:
       index:
-        books: Sách
+        books: "Sách"
         book_list: "Tất cả sách"
         name: "Tên sách"
         image: "Ảnh"
@@ -31,7 +35,6 @@ vi:
       book:
         delete: "Xóa"
         edit: "Sửa"
-
   layouts:
     header:
       my_account: "Tài khoản của tôi"

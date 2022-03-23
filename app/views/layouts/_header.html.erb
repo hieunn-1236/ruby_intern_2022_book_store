@@ -14,10 +14,11 @@
           <div class="user_option_box">
             <span><%= link_to t("vi"), locale: :vi %></span>
             <span><%= link_to t("en"), locale: :en %></span>
-            <a href="" class="account-link">
+            <% if logged_in? %>
+              <a href="" class="account-link">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>
-                 <%= link_to t(".my_account"), login_path %>
+                 <%= link_to t(".logout"), logout_path, method: "delete" %>
               </span>
             </a>
             <a href="" class="cart-link">
@@ -26,6 +27,11 @@
                 <%= t ".cart" %>
               </span>
             </a>
+            <% else %>
+              <span>
+                 <%= link_to t(".login"), login_path %>
+              </span>
+            <% end %>
           </div>
         </div>
       </div>

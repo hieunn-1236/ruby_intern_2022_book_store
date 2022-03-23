@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :rates, dependent: :destroy
   has_many :books, through: :rates
+  has_many :carts, dependent: :destroy
 
   attr_accessor :remember_token
 
@@ -18,6 +19,8 @@ class User < ApplicationRecord
   validates :password, presence: true,
     length: {minimum: Settings.settings.user.password.min_length_6},
     allow_nil: true
+
+  scope :newest, ->{order(created_at: :desc)}
 
   has_secure_password
 
