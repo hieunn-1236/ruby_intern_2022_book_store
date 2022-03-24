@@ -8,6 +8,23 @@ vi:
   failure: "Thất bại"
   access: "Bạn không có quyền truy cập trang này"
   book_not_found: "Không tìm thấy sách"
+  input_name_label: "Tên sách"
+  input_price_label: "Giá"
+  input_name: "Nhập tên sách"
+  input_price: "Nhập giá sách"
+  input_edition: "Nhập tên tập"
+  edition: "Phiên bản"
+  description: "Mô tả"
+  image: "Đính kèm ảnh"
+  quantity: "Số lượng"
+  input_quantity: "Nhập số lượng"
+  input_description: "Mô tả sách"
+  input_image: "Nhập tệp dính kèm tại đây"
+  category: "Danh mục: "
+  publisher: "Nhà xuất bản: "
+  action: "Action"
+  create_new_book: "Tạo mới"
+
   admin:
     layouts:
       header:
@@ -35,6 +52,15 @@ vi:
       book:
         delete: "Xóa"
         edit: "Sửa"
+      new:
+        title: "Tạo sách mới"
+        add_new_book: "Tạo sách mới"
+      create:
+        error: "Tạo mới sản phẩm không thành công"
+        success: "Tạo sản phẩm thành công"
+      form:
+        add_book_detail: "Add new book detail"
+
   layouts:
     header:
       my_account: "Tài khoản của tôi"

@@ -11,7 +11,9 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import "bootstrap"
 import "../stylesheets/application"
 require("packs/show_product.js")
-
+require("@nathanvda/cocoon")
+require("jquery")
+require("packs/select2setup")
 // require("packs/bootstrap.js")
 // require("packs/product.js")
 // require("packs/sb-admin-2.min.js")
@@ -30,3 +32,8 @@ require("packs/show_product.js")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+//= require jquery
+//= require bootstrap
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree .

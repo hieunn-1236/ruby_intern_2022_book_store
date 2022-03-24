@@ -780,3 +780,13 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+.alert-danger {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.required label:after {
+  color: #e32;
+  content: ' (*)';
+  display:inline;
+}

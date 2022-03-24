@@ -8,6 +8,23 @@ en:
   failure: "Failure!"
   book_not_found: "Book not found"
   access: "You don't have permission to access this page"
+  input_name: "Book Name"
+  input_name_label: "Name"
+  input_price_label: "Price"
+  input_price: "Book's price"
+  edition: "Edidion"
+  description: "Description"
+  image: "Image"
+  quantity: "Quantity"
+  input_edition: "Book's edition"
+  input_quantity: "Book's quantity"
+  input_description: "Book's description"
+  input_image: "Import attachment in here"
+  category: "Category: "
+  publisher: "Publisher: "
+  action: "Action"
+  create_new_book: "Create new book"
+
   admin:
     layouts:
       header:
@@ -35,6 +52,15 @@ en:
       book:
         delete: "Delete"
         edit: "Edit"
+      new:
+        title: "Create book"
+        add_new_book: "Add new book"
+      create:
+        error: "Create error"
+        success: "Create new product success"
+      form:
+        add_book_detail: "Add new book detail"
+
   layouts:
     header:
       my_account: "My Account"

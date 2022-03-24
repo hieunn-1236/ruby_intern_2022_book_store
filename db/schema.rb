@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_17_055706) do
+ActiveRecord::Schema.define(version: 2022_03_19_184542) do
 
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "receiver"
     t.string "address"
     t.string "phone"
@@ -23,14 +44,14 @@ ActiveRecord::Schema.define(version: 2022_03_17_055706) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "book_authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "book_authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.bigint "author_id", null: false
     t.bigint "book_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -39,7 +60,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_055706) do
     t.index ["book_id"], name: "index_book_authors_on_book_id"
   end
 
-  create_table "book_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "book_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "edition"
     t.integer "quantity"
     t.bigint "book_id", null: false
@@ -48,7 +69,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_055706) do
     t.index ["book_id"], name: "index_book_details_on_book_id"
   end
 
-  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "publish_year"
@@ -63,14 +84,14 @@ ActiveRecord::Schema.define(version: 2022_03_17_055706) do
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
   end
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "discounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "discounts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.datetime "start_at"
     t.datetime "end_at"
     t.string "code"
@@ -80,7 +101,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_055706) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "order_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "order_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "quantity"
     t.bigint "order_id", null: false
     t.bigint "book_id", null: false
@@ -90,7 +111,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_055706) do
     t.index ["order_id"], name: "index_order_details_on_order_id"
   end
 
-  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "status", default: 0
     t.bigint "user_id", null: false
     t.bigint "discount_id", null: false
@@ -100,7 +121,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_055706) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "publishers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "phone"
@@ -109,7 +130,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_055706) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "num_star"
     t.text "content"
     t.bigint "user_id", null: false
@@ -120,7 +141,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_055706) do
     t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.integer "role", default: 0
@@ -135,6 +156,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_055706) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "users"
   add_foreign_key "book_authors", "authors"
   add_foreign_key "book_authors", "books"

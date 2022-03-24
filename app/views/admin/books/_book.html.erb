@@ -1,14 +1,18 @@
 <tr>
   <td><%= book.name %></td>
-  <td></td>
+  <td><%= image_tag book.display_image if book.image.attached? %></td>
   <td><%= book.description %></td>
   <td><%= number_to_currency(prices[book_iteration.index]) %></td>
   <td>
-    <button class="btn btn-warning">
-      <i class="fa-solid fa-pen-to-square"></i>
-    </button>
-    <button class="btn btn-danger">
-          <i class="fa-solid fa-trash-can"></i>
-    </button>
+    <%= link_to root_path do %>
+      <label class="btn btn-warning">
+        <i class="fa-solid fa-pen-to-square"></i>
+      </label>
+    <% end %>
+    <%= link_to root_path do %>
+      <label class="btn btn-danger">
+        <i class="fa-solid fa-trash-can"></i>
+      </label>
+    <% end %>
   </td>
 </tr>
