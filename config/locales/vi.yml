@@ -6,6 +6,7 @@ vi:
   not_exist: "Không tồn tại"
   success: "Thành công"
   failure: "Thất bại"
+  error: "Lỗi"
   access: "Bạn không có quyền truy cập trang này"
   book_not_found: "Không tìm thấy sách"
   input_name_label: "Tên sách"
@@ -24,7 +25,7 @@ vi:
   publisher: "Nhà xuất bản: "
   action: "Action"
   create_new_book: "Tạo mới"
-
+  login_required: "Yêu cầu đăng nhập"
   admin:
     layouts:
       header:
@@ -52,6 +53,7 @@ vi:
       book:
         delete: "Xóa"
         edit: "Sửa"
+        info: "Thông tin"
       new:
         title: "Tạo sách mới"
         add_new_book: "Tạo sách mới"
@@ -60,7 +62,6 @@ vi:
         success: "Tạo sản phẩm thành công"
       form:
         add_book_detail: "Add new book detail"
-
   layouts:
     header:
       my_account: "Tài khoản của tôi"

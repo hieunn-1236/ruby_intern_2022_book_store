@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
+    get "/cart", to: "carts#cart"
     resources :home_pages, only: %i(index show)
     namespace :admin do
       root "books#index"
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
     end
     resources :home_pages, only: :index
     resources :books
-    resources :orders
+    resources :orders, only: %i(new create)
     resources :carts, only: :create
   end
 end
