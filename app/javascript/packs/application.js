@@ -15,7 +15,8 @@ require("@nathanvda/cocoon")
 require("jquery")
 require("packs/select2setup")
 global.toastr = require("toastr")
-
+import JQuery from "jquery";
+window.$ = window.JQuery = JQuery;
 // require("packs/bootstrap.js")
 // require("packs/product.js")
 // require("packs/sb-admin-2.min.js")

@@ -28,6 +28,10 @@ en:
   login_required: "Login required"
   delete_book?: "Are you sure delete this book?"
   book_not_found: "Book not found"
+  update_book: "Update book"
+  update_book_success: "Updated book success"
+  update_book_fail: "Update book fail"
+
   admin:
     layouts:
       header:
@@ -62,6 +66,8 @@ en:
       create:
         error: "Create error"
         success: "Create new product success"
+      edit:
+        title: "Edit book"
       form:
         add_book_detail: "Add new book detail"
       destroy:

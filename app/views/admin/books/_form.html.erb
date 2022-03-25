@@ -1,4 +1,4 @@
-<%= form_for [:admin, @product], html: {class: "row g-3"} do |f| %>
+<%= form_for [:admin, @book], html: {class: "row g-3"} do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <div class="col-md-6 required">
     <%= f.label :name, t("input_name_label") %>
@@ -16,15 +16,15 @@
   <div class="col-md-6 required">
     <%= f.label :category_id, t("category") %>
     <%= f.select :category_id,
-        options_for_select(@category),
-                          {selected: @category.first},
+        options_for_select(@category, selected_category(@book)),
+                          {},
                           {class: "form form-control"} %>
   </div>
   <div class="col-md-6 required">
     <%= f.label :publisher_id, t("publisher") %>
     <%= f.select :publisher_id,
-        options_for_select(@publishers),
-                          {selected: @publishers.first},
+        options_for_select(@publishers, selected_publisher(@book)),
+                          {},
                           {class: "form form-control"} %>
   </div>
   <div class="row g-3">
@@ -47,7 +47,7 @@
   <div class="col-md-6">
     <%= f.label :book_authors, t("book_authors") %>
     <%= f.select :author_ids,
-        options_for_select(@authors),
+        options_for_select(@authors, selected_book_authors(@book)),
                            {include_blank: true},
                            multiple: true,
                            class: "form-control select2" %>
@@ -57,11 +57,18 @@
     <%= f.text_area :description, {class: "form-control",
                                    placeholder: t("input_description")} %>
   </div>
-  <div class="col-md-12">
-    <%= f.label :image, t("image") %>
-    <%= f.file_field :image,
-        {accept: Settings.image_formats,
-         class: "form-control", placeholder: t("input_image")} %>
+  <div class="col-md-12 row g-3">
+    <div class="col-sm-8">
+      <%= f.label :image, t("image") %>
+      <%= f.file_field :image,
+          {accept: Settings.image_formats,
+          class: "form-control", placeholder: t("input_image")} %>
+    </div>
+    <div class="col-sm-4">
+      <% if @book.image.attached? %>
+        <%= image_tag @book.display_image %>
+      <% end %>
+    </div>
   </div>
   <div class="col-12">
     <%= f.submit yield(:button_text), class: "btn btn-primary mt-5" %>

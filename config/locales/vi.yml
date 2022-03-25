@@ -28,6 +28,9 @@ vi:
   login_required: "Yêu cầu đăng nhập"
   delete_book?: "Bạn có chắc chắn muốn xóa sách này?"
   book_not_found: "Không tìm thấy sách này"
+  update_book: "Cập nhật book"
+  update_book_success: "Cập nhật sách thành công"
+  update_book_fail: "Cập nhật sách thất bại"
 
   admin:
     layouts:
@@ -63,6 +66,8 @@ vi:
       create:
         error: "Tạo mới sản phẩm không thành công"
         success: "Tạo sản phẩm thành công"
+      edit:
+        title: "Sửa thông tin sách"
       form:
         add_book_detail: "Add new book detail"
         add_book_detail: "Thêm mới chi tiết sách"
