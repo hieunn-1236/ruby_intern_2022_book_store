@@ -31,6 +31,26 @@ en:
   update_book: "Update book"
   update_book_success: "Updated book success"
   update_book_fail: "Update book fail"
+  book_name: "Book's name"
+  book_edition: "Book's edition"
+  unit_price: "Unit price"
+  order_create_at: "Create at"
+  customer_name: "Customer's name"
+  customer_info: "Customer's info"
+  status: "Status"
+  order_id: "Order ID"
+  receiver_name: "Receiver name"
+  address: "Address"
+  phone: "Phone"
+  discount: "Discount"
+  total_order_detail: "Total Order Detail"
+  total_order: "Total Order"
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
 
   admin:
     layouts:
@@ -45,6 +65,8 @@ en:
         address: "Address"
       left:
         books: "Books"
+        orders: "Order management"
+        products: "Product management"
     books:
       index:
         books: "Books"
@@ -73,6 +95,10 @@ en:
       destroy:
         book_deleted: "Book deleted"
         delete_fail: "Delete fail"
+    orders:
+      index:
+        title: "Order Management"
+        order_management: "Order Management"
   layouts:
     header:
       my_account: "My Account"

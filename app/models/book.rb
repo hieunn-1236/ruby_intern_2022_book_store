@@ -9,8 +9,6 @@ class Book < ApplicationRecord
   has_many :authors, through: :book_authors
   has_many :rates, dependent: :destroy
   has_many :users, through: :rates
-  has_many :order_details, dependent: :destroy
-  has_many :orders, through: :order_details
   has_one_attached :image
   delegate :name, to: :category, prefix: true, allow_nil: true
   delegate :name, to: :publisher, prefix: true, allow_nil: true

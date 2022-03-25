@@ -1,40 +1,19 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
   <%= link_to t("dashboard"), admin_root_path,
       class: "sidebar-brand d-flex align-items-center justify-content-center"
   %>
   <hr class="sidebar-divider">
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                  aria-expanded="true" aria-controls="collapseTwo">
+    <%= link_to admin_orders_path, class: "nav-link collapsed" do %>
       <i class="fas fa-fw fa-cog"></i>
       <span><%= t ".orders" %></span>
-    </a>
+    <% end %>
   </li>
   <hr class="sidebar-divider">
   <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                  aria-expanded="true" aria-controls="collapseUtilities">
-      <i class="fas fa-fw fa-wrench"></i>
-      <span><%= t ".category" %></span>
-    </a>
-  </li>
-  <hr class="sidebar-divider">
-  <li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                  aria-expanded="true" aria-controls="collapsePages">
+    <%= link_to admin_books_path, class: "nav-link collapsed" do %>
       <i class="fas fa-fw fa-folder"></i>
       <span><%= t ".products" %></span>
-    </a>
+    <% end %>
   </li>
-  <hr class="sidebar-divider">
-  <li class="nav-item active">
-    <a class="nav-link" href="#">
-      <i class="fas fa-fw fa-table"></i>
-      <span><%= t ".users" %></span></a>
-  </li>
-  <hr class="sidebar-divider d-none d-md-block">
-    <div class="text-center d-none d-md-inline">
-      <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
 </ul>

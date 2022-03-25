@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_19_184542) do
+ActiveRecord::Schema.define(version: 2022_03_25_192043) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name", null: false
@@ -104,19 +104,21 @@ ActiveRecord::Schema.define(version: 2022_03_19_184542) do
   create_table "order_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "quantity"
     t.bigint "order_id", null: false
-    t.bigint "book_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["book_id"], name: "index_order_details_on_book_id"
+    t.bigint "book_detail_id", null: false
+    t.index ["book_detail_id"], name: "index_order_details_on_book_detail_id"
     t.index ["order_id"], name: "index_order_details_on_order_id"
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.integer "status", default: 0
     t.bigint "user_id", null: false
-    t.bigint "discount_id", null: false
+    t.bigint "discount_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "address_id", null: false
+    t.index ["address_id"], name: "index_orders_on_address_id"
     t.index ["discount_id"], name: "index_orders_on_discount_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -163,8 +165,9 @@ ActiveRecord::Schema.define(version: 2022_03_19_184542) do
   add_foreign_key "book_details", "books"
   add_foreign_key "books", "categories"
   add_foreign_key "books", "publishers"
-  add_foreign_key "order_details", "books"
+  add_foreign_key "order_details", "book_details"
   add_foreign_key "order_details", "orders"
+  add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "discounts"
   add_foreign_key "orders", "users"
   add_foreign_key "rates", "books"

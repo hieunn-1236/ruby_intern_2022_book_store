@@ -31,6 +31,26 @@ vi:
   update_book: "Cập nhật book"
   update_book_success: "Cập nhật sách thành công"
   update_book_fail: "Cập nhật sách thất bại"
+  book_name: "Tên sách"
+  book_edition: "Tập sách số"
+  unit_price: "Đơn giá"
+  order_create_at: "Ngày đặt"
+  customer_name: "Tên khách hàng"
+  customer_info: "Thông tin khách hàng"
+  status: "Trạng thái"
+  order_id: "Order ID"
+  receiver_name: "Tên người nhận"
+  address: "Địa chỉ"
+  phone: Số điện thoại"
+  discount: "Giảm giá"
+  total_order_detail: "Thành tiền"
+  total_order: "Tổng tiền"
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
 
   admin:
     layouts:
@@ -45,6 +65,8 @@ vi:
         address: "Địa chỉ"
       left:
         books: "Sách"
+        orders: "Quản lý đơn hàng"
+        products: "Quản lý sản phẩm"
     books:
       index:
         books: "Sách"
@@ -74,6 +96,10 @@ vi:
       destroy:
         book_deleted: "Xóa sách thành công"
         delete_fail: "Xóa sách thất bại"
+    orders:
+      index:
+        title: "Quản lý order"
+        order_management: "Quản lý order"
 
   layouts:
     header:

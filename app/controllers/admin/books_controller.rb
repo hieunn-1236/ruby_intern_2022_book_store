@@ -1,5 +1,5 @@
 class Admin::BooksController < Admin::AdminController
-  before_action :load_book_info, only: %i(new create edit update)
+  before_action :load_book_info, except: %i(index destroy)
   before_action :load_book, only: %i(update edit destroy)
 
   def index

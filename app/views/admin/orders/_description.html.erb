@@ -1,0 +1,35 @@
+<ul>
+  <li>
+    <%= t "book_name" %>:
+    <%= od.book_detail.book_name %>
+    <ul>
+      <li>
+        <%= t "book_edition" %>:
+        <%= od.book_detail_edition %>
+      </li>
+      <li>
+        <%= t "unit_price" %>:
+        <%= number_to_currency(Order.convert_vnd(od.book_detail.book_price,
+                                                 params[:locale])) %>
+      </li>
+      <li>
+        <%= t "quantity" %>:
+        <%= od.quantity %>
+      </li>
+      <li>
+        <%= t "discount" %>:
+        <%= discount_percent(od.order.discount) %> %
+      </li>
+      <li>
+        <%= t "total_order_detail" %>:
+        <%= number_to_currency(Order.convert_vnd(
+                                cal_purchase_price(
+                                  total_on_book(od.quantity,
+                                                od.book_detail.book_price),
+                                  discount_percent(od.order.discount)),
+                                params[:locale]))
+        %>
+      </li>
+    </ul>
+  </li>
+</ul>
