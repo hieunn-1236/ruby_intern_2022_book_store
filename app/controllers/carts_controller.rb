@@ -34,11 +34,6 @@ class CartsController < ApplicationController
   end
 
   private
-  def init_cart
-    session[:cart] ||= []
-    @cart = session[:cart]
-  end
-
   def select_item
     @cart.each do |line_item|
       if line_item["book_id"] == params[:book_id].to_i

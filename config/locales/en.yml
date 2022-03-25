@@ -6,6 +6,7 @@ en:
   not_exist: "Not exist"
   success: "Success!"
   failure: "Failure!"
+  error: "Error"
   book_not_found: "Book not found"
   access: "You don't have permission to access this page"
   input_name: "Book Name"
@@ -24,7 +25,7 @@ en:
   publisher: "Publisher: "
   action: "Action"
   create_new_book: "Create new book"
-
+  login_required: "Login required"
   admin:
     layouts:
       header:
@@ -52,6 +53,7 @@ en:
       book:
         delete: "Delete"
         edit: "Edit"
+        info: "Book's Info"
       new:
         title: "Create book"
         add_new_book: "Add new book"
@@ -60,7 +62,6 @@ en:
         success: "Create new product success"
       form:
         add_book_detail: "Add new book detail"
-
   layouts:
     header:
       my_account: "My Account"
