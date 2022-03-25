@@ -22,6 +22,8 @@ gem "puma", "~> 4.1"
 gem "rails", "~> 6.0.4", ">= 6.0.4.6"
 gem "rails-i18n"
 gem "sass-rails", ">= 6"
+gem "simplecov"
+gem "simplecov-rcov"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 
@@ -31,6 +33,7 @@ group :development, :test do
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
+  gem "shoulda-matchers", "~> 5.0"
 end
 
 group :development do
@@ -38,12 +41,15 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
+  gem "factory_bot_rails"
 end
 
 group :test do
   gem "capybara", ">= 2.15"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "database_cleaner"
+  gem "faker", "2.1.2"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

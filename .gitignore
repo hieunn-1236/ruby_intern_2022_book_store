@@ -70,7 +70,6 @@ yarn-debug.log*
 /config/database.yml
 /config/credentials.yml.enc
 test
-spec
 .browserslistrc
 
 config/settings.local.yml
