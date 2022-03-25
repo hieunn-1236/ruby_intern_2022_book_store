@@ -1,4 +1,6 @@
 vi:
+  vi: "VI"
+  en: "EN"
   title: "Book Store"
   home: "Trang chủ"
   search: "Tìm kiếm theo tên"
@@ -45,7 +47,17 @@ vi:
   discount: "Giảm giá"
   total_order_detail: "Thành tiền"
   total_order: "Tổng tiền"
-
+  are_you_sure: "Bạn có chắc chắn?"
+  is_being_delivered: "Đang được vận chuyển"
+  was_rejected: "Đã từ chối"
+  update_order_fail: "Cập nhật đơn hàng thất bại"
+  update_order_success: "Cập nhật đơn hàng thành công"
+  order_information: "Thông tin đơn hàng #ID: "
+  hello: "Xin chào: "
+  mail_info: "Đây là mail thông báo về thông tin đặt hàng của bạn "
+  order_success: " đặt hàng thành công"
+  order_was_rejected: " đặt hàng bị từ chối"
+  update_order_reject: "Đơn hàng đã bị từ chối"
   time:
     formats:
       default: "%a, %d %b %Y %H:%M:%S %z"
@@ -100,6 +112,8 @@ vi:
       index:
         title: "Quản lý order"
         order_management: "Quản lý order"
+    approve_order: "Đơn hàng đã được xác thực"
+    reject_order : "Đơn hàng đã bị từ chối"
 
   layouts:
     header:

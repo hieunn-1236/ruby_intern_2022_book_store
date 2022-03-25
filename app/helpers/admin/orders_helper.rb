@@ -22,4 +22,12 @@ module Admin::OrdersHelper
       )
     end
   end
+
+  def button_font status
+    if status == :accepted
+      "fa-circle-check"
+    elsif status == :rejected
+      "fa-trash-can"
+    end
+  end
 end

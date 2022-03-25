@@ -10,6 +10,14 @@ class Order < ApplicationRecord
 
   accepts_nested_attributes_for :order_details, allow_destroy: true
 
+  def send_mail_approve
+    UserMailer.approve_order(self).deliver_now
+  end
+
+  def send_mail_reject
+    UserMailer.reject_order(self).deliver_now
+  end
+
   class << self
     def convert_vnd price, locale
       return price if locale == "en"

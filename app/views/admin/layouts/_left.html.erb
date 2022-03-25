@@ -16,4 +16,26 @@
       <span><%= t ".products" %></span>
     <% end %>
   </li>
+  <hr class="sidebar-divider">
+  <li class="nav-item">
+    <div class = "nav-link collapsed">
+      <i class="fa-solid fa-language"></i>
+      <%= link_to t("vi"), locale: :vi, class: "vi_en_white" %> |
+      <%= link_to t("en"), locale: :en %>
+    </div>
+  </li>
+  <hr class="sidebar-divider">
+  <li class="nav-item">
+    <%= link_to home_pages_path, class: "nav-link collapsed" do %>
+      <i class="fa-solid fa-house"></i>
+      <span><%= t ".bookstore" %></span>
+    <% end %>
+  </li>
+  <hr class="sidebar-divider">
+  <li class="nav-item">
+    <%= link_to logout_path, class: "nav-link collapsed" do %>
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      <span><%= t ".logout" %></span>
+    <% end %>
+  </li>
 </ul>
