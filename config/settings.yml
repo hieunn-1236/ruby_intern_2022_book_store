@@ -19,6 +19,7 @@ min_val: 0
 max_edition_length: 255
 max_description_length: 500
 max_address_length: 500
+min_val: 0
 image_format: ["image/jpeg", "image/gif", "image/png"]
 image_formats: "image/jpeg, image/gif, image/png"
 image_size: 5

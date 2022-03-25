@@ -26,6 +26,9 @@ vi:
   action: "Action"
   create_new_book: "Tạo mới"
   login_required: "Yêu cầu đăng nhập"
+  delete_book?: "Bạn có chắc chắn muốn xóa sách này?"
+  book_not_found: "Không tìm thấy sách này"
+
   admin:
     layouts:
       header:
@@ -62,6 +65,11 @@ vi:
         success: "Tạo sản phẩm thành công"
       form:
         add_book_detail: "Add new book detail"
+        add_book_detail: "Thêm mới chi tiết sách"
+      destroy:
+        book_deleted: "Xóa sách thành công"
+        delete_fail: "Xóa sách thất bại"
+
   layouts:
     header:
       my_account: "Tài khoản của tôi"
