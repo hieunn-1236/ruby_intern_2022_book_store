@@ -8,6 +8,10 @@
                                        as: :od %>
     <ul>
       <li>
+        <%= t "discount" %>:
+        <%= discount_percent(order.discount) %> %
+      </li>
+      <li>
         <%= t "total_order" %>:
         <%= number_to_currency(Order.convert_vnd(
                                 total(order.order_details),

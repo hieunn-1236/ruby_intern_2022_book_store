@@ -1,0 +1,33 @@
+<% book = load_book(item["book_id"]) %>
+<tr>
+  <td>
+    <div class="product-item">
+      <div class="product-info">
+        <h4 class="product-title">
+          <%= book.name %>
+        </h4>
+        <span>
+          <em><%= book.description %></em>
+        </span>
+        <span>
+          <em> <%= number_to_currency(Order.convert_vnd(book.price,params[:locale])) %></em>
+        </span>
+      </div>
+    </div>
+  </td>
+  <td class="text-center">
+    <div class="count-input">
+      <span><%= button_to "+", {operator: "+", book_id: item["book_id"]}, method: :put %></span>
+      <span><%= item["quantity"] %></span>
+      <span><%= button_to "-", {operator: "-", book_id: item["book_id"]}, method: :put %></span>
+    </div>
+  </td>
+  <td class="text-center text-lg text-medium">
+    <%= number_to_currency(Order.convert_vnd(total_on_book(item["quantity"], book.price),params[:locale])) %>
+  </td>
+  <td class="text-center">
+    <a class="remove-from-cart" >
+      <%= button_to "X", {book_id: item["book_id"]} , method: :delete %>
+    </a>
+  </td>
+</tr>

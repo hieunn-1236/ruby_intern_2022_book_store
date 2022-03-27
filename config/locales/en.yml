@@ -107,6 +107,8 @@ en:
       home: "Home"
       about: "About"
       products: "Products"
+      login: "Login"
+      logout: "Log out"
     footer:
       bookstore: "Book Store"
       address: "Address"
@@ -144,5 +146,13 @@ en:
       author: "Author:"
       publish_year: "Publish year:"
       quantity: "Quantity:"
+      add_to_cart: "Add To Cart"
     index:
       title: "Home"
+      our_products: "Our Products"
+  carts:
+    index:
+      product: "Product"
+      quantity: "Quantity"
+      subtotal: "Subtotal"
+      order: "Order"
