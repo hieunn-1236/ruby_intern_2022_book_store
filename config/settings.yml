@@ -30,3 +30,5 @@ thumbnail: "50x50!"
 status_order_new: 0
 image_limit: [150, 150]
 format_price: !ruby/regexp /\A\d+(?:\.\d{2})?\z/
+default_discount_percent: 0
+max_percent: 100

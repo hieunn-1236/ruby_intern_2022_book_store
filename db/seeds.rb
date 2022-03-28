@@ -32,9 +32,9 @@ end
   )
 end
 
-50.times do
+200.times do
   edition = "Episode 1"
-  quantity = Faker::Number.between(from: 5, to: 100)
+  quantity = Faker::Number.between(from: 50, to: 100)
   BookDetail.create!(edition: edition,
                      quantity: quantity,
                      book_id: Book.all.pluck(:id).sample
@@ -75,3 +75,42 @@ User.create!(name: "abc",
              role: 1,
              activated: true,
              activated_at: Time.zone.now)
+
+20.times do |n|
+  start_at = Faker::Time.between(from: 2.days.ago, to: Time.now)
+  end_at = Faker::Time.forward(days: 100, period: :morning)
+  code = "code-#{n+1}"
+  percent = Faker::Number.between(from: 1, to: 100)
+  quantity = Faker::Number.between(from: 100, to: 500)
+  Discount.create!(start_at: start_at,
+                   end_at: end_at,
+                   code: code,
+                   percent: percent,
+                   quantity: quantity)
+end
+
+30.times do
+  Address.create!(receiver: Faker::Name.name,
+                  address: Faker::Address.street_address,
+                  phone: 982423412,
+                  user_id: User.all.pluck(:id).sample)
+end
+
+discount_ids = []
+(1..20).map do |i|
+  discount_ids << i
+end
+
+30.times do
+  user_id = User.all.pluck(:id).sample
+  Order.create!(user_id: user_id,
+                discount_id: discount_ids.sample,
+                status: Faker::Number.between(from: 0, to: 2),
+                address_id: User.find(user_id.to_s).addresses.ids.sample)
+end
+
+90.times do
+  OrderDetail.create!(order_id: Order.all.pluck(:id).sample,
+                      book_detail_id:  BookDetail.all.pluck(:id).sample,
+                      quantity: Faker::Number.between(from: 1, to: 5))
+end

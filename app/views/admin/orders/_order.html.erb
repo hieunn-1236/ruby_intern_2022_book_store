@@ -1,0 +1,34 @@
+<tr>
+  <td><%= order.id %></td>
+  <td><%= render partial: "customer_info",
+                 locals: {customer: order.address} %>
+  </td>
+  <td>
+    <%= render partial: "description", collection: order.order_details,
+                                       as: :od %>
+    <ul>
+      <li>
+        <%= t "total_order" %>:
+        <%= number_to_currency(Order.convert_vnd(
+                                total(order.order_details),
+                                params[:locale]))%>
+      </li>
+    </ul>
+  </td>
+  <td><%= l(order.created_at, format: :short) %></td>
+  <td>
+    <%= order.status %>
+  </td>
+  <td>
+    <%= link_to admin_orders_path do %>
+      <label class="btn btn-success">
+        <i class="fa-solid fa-circle-check"></i>
+      </label>
+    <% end %>
+    <%= link_to admin_orders_path, class: "book_delete" do %>
+      <label class="btn btn-danger">
+        <i class="fa-solid fa-trash-can"></i>
+      </label>
+    <% end %>
+  </td>
+</tr>
