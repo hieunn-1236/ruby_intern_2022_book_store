@@ -1,2 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
-@import 'toastr'
+@import 'toastr';
+
+.btn-accepted {
+  @extend .btn-success
+};
+
+.btn-rejected {
+  @extend .btn-danger
+};

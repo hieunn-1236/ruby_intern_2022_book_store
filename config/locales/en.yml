@@ -1,7 +1,9 @@
 en:
+  vi: "VI"
+  en: "EN"
   title: "Book Store"
   home: "Home"
-  search: "Search"
+  search: "Search by name"
   invalid: "Invalid email password combination"
   not_exist: "Not exist"
   success: "Success!"
@@ -45,7 +47,17 @@ en:
   discount: "Discount"
   total_order_detail: "Total Order Detail"
   total_order: "Total Order"
-
+  are_you_sure: "Are you sure"
+  is_being_delivered: "Is being delivered"
+  was_rejected: "Was rejected"
+  update_order_fail: "Update order fail"
+  update_order_success: "Update order success"
+  order_information: "Order information #ID: "
+  hello: "Hello "
+  mail_info: "This mail notifies you of your order number "
+  order_success: " ordered successfully"
+  order_was_rejected: " order was rejected"
+  update_order_reject: "Order has been reject"
   time:
     formats:
       default: "%a, %d %b %Y %H:%M:%S %z"
@@ -99,6 +111,9 @@ en:
       index:
         title: "Order Management"
         order_management: "Order Management"
+    approve_order: "Order has been confirmed"
+    reject_order : "Order has been declined"
+
   layouts:
     header:
       my_account: "My Account"

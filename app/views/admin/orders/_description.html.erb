@@ -17,16 +17,10 @@
         <%= od.quantity %>
       </li>
       <li>
-        <%= t "discount" %>:
-        <%= discount_percent(od.order.discount) %> %
-      </li>
-      <li>
         <%= t "total_order_detail" %>:
         <%= number_to_currency(Order.convert_vnd(
-                                cal_purchase_price(
                                   total_on_book(od.quantity,
                                                 od.book_detail.book_price),
-                                  discount_percent(od.order.discount)),
                                 params[:locale]))
         %>
       </li>

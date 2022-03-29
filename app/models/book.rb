@@ -13,7 +13,8 @@ class Book < ApplicationRecord
   delegate :name, to: :category, prefix: true, allow_nil: true
   delegate :name, to: :publisher, prefix: true, allow_nil: true
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true,
+            length: {maximum: Settings.max_name_book_length}
   validates :price, presence: true,
             format: {with: Settings.format_price},
             numericality: {greater_than: Settings.min_book_price_length,
