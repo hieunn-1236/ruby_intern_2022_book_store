@@ -35,8 +35,8 @@ class Book < ApplicationRecord
   scope :search,
         ->(search){where("name LIKE ?", "%#{search}%") if search.present?}
 
-  def dollar_to_vnd book
-    book.price = book.price * Settings.dollar_to_vnd
+  def dollar_to_vnd
+    price * Settings.dollar_to_vnd if price.present?
   end
 
   def display_image
@@ -45,7 +45,7 @@ class Book < ApplicationRecord
 
   class << self
     def dollar_to_vnds books
-      books.map{|book| book.price = book.price * Settings.dollar_to_vnd}
+      books.map(&:dollar_to_vnd)
     end
   end
 end
