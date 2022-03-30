@@ -1,0 +1,40 @@
+<div class="container padding-bottom-3x mb-1">
+  <div class="table-responsive shopping-cart">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= t ".product" %></th>
+          <th class="text-center"><%= t ".quantity" %></th>
+          <th class="text-center"><%= t ".subtotal" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @cart %>
+          <% @cart.each do |line_item| %>
+            <%= render partial: "carts/cart", locals: {item: line_item} %>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="shopping-cart-footer">
+    <div class="column text-lg"><%= t ".subtotal" %>:
+      <span class="text-medium"><%= number_to_currency(Order.convert_vnd(total_order(@cart), params[:locale])) %></span>
+    </div>
+  </div>
+  <div class="shopping-cart-footer">
+    <%= form_for(Order.new, url: orders_path) do |f| %>
+      <%= f.label :address %>
+      <%= f.select :address_id,
+        options_for_select(current_user.addresses.pluck(:address, :id)),
+                          {},
+                          {class: "form form-control"} %>
+      <%= f.label :discount %>
+      <%= f.select :discount_id,
+        options_for_select(@discounts),
+                          {},
+                          {class: "form form-control"} %>
+      <%= f.submit t(".order") %>
+    <% end %>
+  </div>
+</div>

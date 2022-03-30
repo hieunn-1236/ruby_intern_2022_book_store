@@ -123,6 +123,8 @@ vi:
       home: "Trang chủ"
       about: "Thông tin"
       products: "Sản phẩm"
+      login: "Đăng nhập"
+      logout: "Đăng xuất"
     footer:
       bookstore: "Book Store"
       address: "Địa chỉ"
@@ -160,5 +162,13 @@ vi:
       author: "Tác giả:"
       publish_year: "Năm sản xuất:"
       quantity: "Số lượng còn lại:"
+      add_to_cart: "Thêm vào giỏ hàng"
     index:
       title: "Trang chủ"
+      our_products: "Danh mục sản phẩm"
+  carts:
+    index:
+      product: "Sản phẩm"
+      quantity: "Số lượng"
+      subtotal: "Đơn giá"
+      order: "Đặt hàng"

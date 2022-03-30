@@ -43,9 +43,12 @@
     </div>
     <div class="p-product-price">
       <span><%= number_to_currency(@price) %></span>
-      <a href="#" class="p-cart-btn">
+      <%= form_for(Cart.new, url: carts_path) do |f| %>
+        <%= f.number_field :quantity, value: 1 %>
+        <%= f.number_field :book_id, value: @product.id, hidden: true %>
+        <%= f.submit t(".add_to_cart"), class: "p-cart-btn" %>
+      <% end %>
       <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-      <%= link_to ".add_to_cart", "cart_path" %>
       </a>
     </div>
   </div>

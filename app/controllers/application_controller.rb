@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   before_action :set_locale
+  before_action :load_discount
   include SessionsHelper
 
   private
@@ -27,5 +28,9 @@ class ApplicationController < ActionController::Base
 
     flash[:danger] = t "login_required"
     redirect_to login_url
+  end
+
+  def load_discount
+    @discounts = Discount.all.pluck(:percent, :id)
   end
 end

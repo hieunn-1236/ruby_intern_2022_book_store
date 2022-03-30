@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :user
-  belongs_to :discount
+  belongs_to :discount, optional: true
   belongs_to :address, optional: true
   has_many :order_details, dependent: :destroy
   has_many :book_details, through: :order_details
