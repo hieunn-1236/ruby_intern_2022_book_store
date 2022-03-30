@@ -89,6 +89,13 @@
 #                    quantity: quantity)
 # end
 
+# 30.times do
+#   Address.create!(receiver: Faker::Name.name,
+#                   address: Faker::Address.street_address,
+#                   phone: 982423412,
+#                   user_id: User.all.pluck(:id).sample)
+# end
+
 # discount_ids = []
 # (1..20).map do |i|
 #   discount_ids << i

@@ -89,8 +89,15 @@ GEM
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
     crass (1.0.6)
+    database_cleaner (2.0.1)
+      database_cleaner-active_record (~> 2.0.0)
+    database_cleaner-active_record (2.0.1)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     deep_merge (1.2.2)
     diff-lcs (1.5.0)
+    docile (1.4.0)
     dry-configurable (0.14.0)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.6)
@@ -125,6 +132,11 @@ GEM
       dry-schema (~> 1.9, >= 1.9.1)
     erubi (1.10.0)
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     faker (2.1.2)
       i18n (>= 0.8)
     ffi (1.15.5)
@@ -166,7 +178,7 @@ GEM
       racc (~> 1.4)
     pagy (5.10.1)
       activesupport
-    parallel (1.22.0)
+    parallel (1.22.1)
     parser (3.1.1.0)
       ast (~> 2.4.1)
     pry (0.14.1)
@@ -266,6 +278,16 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
+    shoulda-matchers (5.1.0)
+      activesupport (>= 5.2.0)
+    simplecov (0.21.2)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov-rcov (0.2.3)
+      simplecov (>= 0.4.1)
+    simplecov_json_formatter (0.1.4)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -318,6 +340,8 @@ DEPENDENCIES
   capybara (>= 2.15)
   cocoon
   config
+  database_cleaner
+  factory_bot_rails
   faker (= 2.1.2)
   figaro (~> 1.1, >= 1.1.1)
   i18n-js
@@ -338,6 +362,9 @@ DEPENDENCIES
   rubocop-rails (~> 2.3.2)
   sass-rails (>= 6)
   selenium-webdriver
+  shoulda-matchers (~> 5.0)
+  simplecov
+  simplecov-rcov
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
