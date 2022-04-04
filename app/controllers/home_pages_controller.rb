@@ -13,7 +13,7 @@ class HomePagesController < ApplicationController
     @book_details = @product.book_details
     return @price = @product.price unless is_vi_location?
 
-    @price = @product.dollar_to_vnd @product
+    @price = @product.dollar_to_vnd
   end
 
   private
