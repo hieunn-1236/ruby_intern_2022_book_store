@@ -4,7 +4,7 @@ class Order < ApplicationRecord
   belongs_to :address, optional: true
   has_many :order_details, dependent: :destroy
   has_many :book_details, through: :order_details
-  enum status: {pending: 0, accepted: 1, rejected: 2}
+  enum status: {pending: 0, accepted: 1, rejected: 2}, _suffix: true
   delegate :name, to: :user, prefix: true, allow_nil: true
   scope :order_newest, ->{order(created_at: :desc)}
 

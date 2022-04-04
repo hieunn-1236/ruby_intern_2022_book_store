@@ -37,19 +37,18 @@ group :development, :test do
 end
 
 group :development do
+  gem "factory_bot_rails"
   gem "listen", "~> 3.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
-  gem "factory_bot_rails"
 end
 
 group :test do
   gem "capybara", ">= 2.15"
+  gem "database_cleaner"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem "database_cleaner"
-  gem "faker", "2.1.2"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
