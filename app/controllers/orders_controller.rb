@@ -2,12 +2,6 @@ class OrdersController < ApplicationController
   before_action :logged_in_user
   before_action :init_order, only: :create
 
-  def index; end
-
-  def new
-    @order = Order.new
-  end
-
   def create
     @cart = session[:cart]
     @cart.each do |line_item|
@@ -16,12 +10,14 @@ class OrdersController < ApplicationController
         book_detail_id: line_item["book_id"]
       )
     end
-    @order.save!
-    session[:cart] = []
-    flash[:success] = t "success"
-    redirect_to root_url
-  rescue ActiveRecord::RecordNotSaved => e
-    handle_exception e
+    if @order.save
+      session[:cart] = []
+      flash[:success] = t "success"
+      redirect_to root_url
+    else
+      flash.now[:danger] = t "error"
+      redirect_to carts_path
+    end
   end
 
   private
@@ -30,13 +26,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit :name, :receiver,
-                                  :phone, :address_id, :discount_id
-  end
-
-  def handle_exception exception
-    log exception
-    flash.now[:danger] = t "error"
-    redirect_to root_url
+    params.require(:order).permit :address_id, :discount_id
   end
 end
