@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV["HOST_EMAIL"]
+  default from: "smtp.mailtrap.io"
   layout "mailer"
 end
