@@ -1,9 +1,9 @@
 <%= form_for [:admin, @book], html: {class: "row g-3"} do |f| %>
-  <%= render "shared/error_messages", object: f.object %>
   <div class="col-md-6 required">
     <%= f.label :name, t("input_name_label") %>
     <%= f.text_field :name,
         {class: "form-control", placeholder: t("input_name")} %>
+    <%= errors_for f, :name %>
   </div>
   <div class="col-md-6 required">
     <%= f.label :price, t("input_price_label") %>
@@ -12,6 +12,7 @@
          placeholder: t("input_price"),
          min: Settings.min_book_price_length,
          max: Settings.max_book_price_length} %>
+    <%= errors_for f, :price %>
   </div>
   <div class="col-md-6 required">
     <%= f.label :category_id, t("category") %>
@@ -19,6 +20,7 @@
         options_for_select(@category, selected_category(@book)),
                           {},
                           {class: "form form-control"} %>
+    <%= errors_for f, :category_id %>
   </div>
   <div class="col-md-6 required">
     <%= f.label :publisher_id, t("publisher") %>
@@ -26,6 +28,7 @@
         options_for_select(@publishers, selected_publisher(@book)),
                           {},
                           {class: "form form-control"} %>
+    <%= errors_for f, :publisher_id %>
   </div>
   <div class="row g-3">
     <%= f.fields_for :book_details do |ff| %>
@@ -44,18 +47,20 @@
     <%= f.label :publish_year, t("publish_year") %>
     <%= f.date_field :publish_year, {class: "form-control"} %>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6 required">
     <%= f.label :book_authors, t("book_authors") %>
     <%= f.select :author_ids,
         options_for_select(@authors, selected_book_authors(@book)),
                            {include_blank: true},
                            multiple: true,
                            class: "form-control select2" %>
+    <%= errors_for f, :book_authors %>
   </div>
   <div class="col-md-12 required">
     <%= f.label :description, t("description") %>
     <%= f.text_area :description, {class: "form-control",
                                    placeholder: t("input_description")} %>
+    <%= errors_for f, :description %>
   </div>
   <div class="col-md-12 row g-3">
     <div class="col-sm-8">

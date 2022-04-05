@@ -33,7 +33,7 @@
   </li>
   <hr class="sidebar-divider">
   <li class="nav-item">
-    <%= link_to logout_path, class: "nav-link collapsed" do %>
+    <%= link_to logout_path, method: :delete, class: "nav-link collapsed" do %>
       <i class="fa-solid fa-arrow-right-from-bracket"></i>
       <span><%= t ".logout" %></span>
     <% end %>

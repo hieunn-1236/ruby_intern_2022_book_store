@@ -27,6 +27,7 @@ gem "rails-i18n"
 gem "rspec-activemodel-mocks"
 gem "sass-rails", ">= 6"
 gem "sidekiq"
+gem "simple_form"
 gem "simplecov"
 gem "simplecov-rcov"
 gem "turbolinks", "~> 5"
@@ -42,6 +43,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "bullet"
   gem "factory_bot_rails"
   gem "listen", "~> 3.2"
   gem "spring"
