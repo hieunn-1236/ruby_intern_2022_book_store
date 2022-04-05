@@ -5,8 +5,7 @@ class Admin::OrdersController < Admin::AdminController
   authorize_resource
 
   def index
-    @pagy, @orders = pagy Order.all.includes([book_details: :book],
-                                             :user, :discount,
+    @pagy, @orders = pagy Order.all.includes(:user, :discount,
                                              :order_details).order_newest
   end
 
