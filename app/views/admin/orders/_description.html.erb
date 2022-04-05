@@ -1,29 +1,23 @@
-<ul>
-  <li>
-    <%= t "book_name" %>:
+<tr>
+  <td>
+    <%= od.book_detail.book_id %>
+  </td>
+  <td>
     <%= od.book_detail.book_name %>
-    <ul>
-      <li>
-        <%= t "book_edition" %>:
-        <%= od.book_detail_edition %>
-      </li>
-      <li>
-        <%= t "unit_price" %>:
-        <%= number_to_currency(Order.convert_vnd(od.book_detail.book_price,
-                                                 params[:locale])) %>
-      </li>
-      <li>
-        <%= t "quantity" %>:
-        <%= od.quantity %>
-      </li>
-      <li>
-        <%= t "total_order_detail" %>:
-        <%= number_to_currency(Order.convert_vnd(
+  </td>
+  <td>
+    <%= od.book_detail_edition %>
+  </td>
+  <td>
+    <%= number_to_currency(Order.convert_vnd(od.price, params[:locale])) %>
+  </td>
+  <td>
+    <%= od.quantity %>
+  </td>
+  <td>
+    <%= number_to_currency(Order.convert_vnd(
                                   total_on_book(od.quantity,
-                                                od.book_detail.book_price),
-                                params[:locale]))
-        %>
-      </li>
-    </ul>
-  </li>
-</ul>
+                                                od.price),
+                                params[:locale])) %>
+  </td>
+</tr>

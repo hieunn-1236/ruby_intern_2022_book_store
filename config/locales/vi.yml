@@ -23,8 +23,9 @@ vi:
   input_quantity: "Nhập số lượng"
   input_description: "Mô tả sách"
   input_image: "Nhập tệp dính kèm tại đây"
-  category: "Danh mục: "
-  publisher: "Nhà xuất bản: "
+  category: "Danh mục "
+  author: "Tác giả"
+  publisher: "Nhà xuất bản"
   action: "Action"
   create_new_book: "Tạo mới"
   login_required: "Yêu cầu đăng nhập"
@@ -63,6 +64,9 @@ vi:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
+  description_book: "Mô tả sách"
+  author_book: "Tác giả"
+  order_detail: "Chi tiết"
 
   admin:
     layouts:
@@ -90,6 +94,8 @@ vi:
         edit: "Chỉnh sửa"
         book_count: "Số sách"
         add_book: "Thêm sách mới"
+        book_id: "ID Sản Phẩm"
+        sum_book: "Số lượng"
       book:
         delete: "Xóa"
         edit: "Sửa"
@@ -109,6 +115,9 @@ vi:
         book_deleted: "Xóa sách thành công"
         delete_fail: "Xóa sách thất bại"
     orders:
+      show:
+        order_detail: "Chi tiết đơn hàng"
+        book_id: "ID"
       index:
         title: "Quản lý order"
         order_management: "Quản lý order"

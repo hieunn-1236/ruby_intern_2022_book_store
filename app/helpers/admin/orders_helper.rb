@@ -17,7 +17,7 @@ module Admin::OrdersHelper
     order_details.reduce(0) do |sum, order_detail|
       sum + cal_purchase_price(
         total_on_book(order_detail.quantity,
-                      order_detail.book_detail.book_price),
+                      order_detail.price),
         discount_percent(order_detail.order.discount)
       )
     end

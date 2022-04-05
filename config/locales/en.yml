@@ -18,13 +18,14 @@ en:
   edition: "Edidion"
   description: "Description"
   image: "Image"
+  author: "Authors"
   quantity: "Quantity"
   input_edition: "Book's edition"
   input_quantity: "Book's quantity"
   input_description: "Book's description"
   input_image: "Import attachment in here"
-  category: "Category: "
-  publisher: "Publisher: "
+  category: "Category"
+  publisher: "Publisher"
   action: "Action"
   create_new_book: "Create new book"
   login_required: "Login required"
@@ -63,6 +64,9 @@ en:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
+  description_book: "Description"
+  author_book: "Authors"
+  order_detail: "Order Detail"
 
   admin:
     layouts:
@@ -90,6 +94,8 @@ en:
         edit: "Edit"
         book_count: "All book"
         add_book: "Add book"
+        book_id: "ID Product"
+        sum_book: "Quantity"
       book:
         delete: "Delete"
         edit: "Edit"
@@ -108,6 +114,9 @@ en:
         book_deleted: "Book deleted"
         delete_fail: "Delete fail"
     orders:
+      show:
+        order_detail: "Order detail"
+        book_id: "ID"
       index:
         title: "Order Management"
         order_management: "Order Management"
