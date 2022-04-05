@@ -88,15 +88,16 @@ discount_ids = []
   discount_ids << i
 end
 
-100.times do
+200.times do
   user_id = User.all.pluck(:id).sample
   Order.create!(user_id: user_id,
                 discount_id: discount_ids.sample,
                 status: Faker::Number.between(from: 0, to: 2),
-                address_id: User.find(user_id.to_s).addresses.ids.sample)
+                address_id: User.find(user_id.to_s).addresses.ids.sample,
+                created_at: (rand*30).days.ago)
 end
 
-300.times do
+600.times do
   book_detail_id = BookDetail.all.pluck(:id).sample
   OrderDetail.create!(order_id: Order.all.pluck(:id).sample,
                       book_detail_id: book_detail_id,

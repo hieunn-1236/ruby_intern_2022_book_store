@@ -1,0 +1,22 @@
+<% provide :title, t(".title") %>
+
+<%= line_chart @order_group_by_day, colors: ["#b00", "#666"],
+                                    title: t(".title_order_group_by_day"),
+                                    label: t(".value_order_group_by_day"),
+                                    xtitle: t(".time"), ytitle: t("quantity"),
+                                    legend: "bottom" %>
+
+<%= column_chart @order_group_by_day_of_week, colors: ["#b00", "#666"],
+                                              title: t(".title_order_group_by_day_of_week"),
+                                              xtitle: t(".time"), ytitle: t("quantity"),
+                                              label: t(".value_order_group_by_day_of_week") %>
+
+<%= pie_chart @order_group_status, title: t(".title_order_group_status"),
+                                   legend: "bottom",
+                                   donut: true %>
+
+<%= bar_chart @order_group_by_category, title: t(".title_order_group_by_category"),
+                                        xtitle: t("quantity"), ytitle: t("category"),
+                                        colors: ["#b00", "#666"],
+                                        label: t(".value_order_group_by_category"),
+                                        legend: "bottom" %>
