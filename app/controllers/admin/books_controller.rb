@@ -1,6 +1,7 @@
 class Admin::BooksController < Admin::AdminController
   before_action :load_book_info, except: %i(index destroy)
   before_action :load_book, only: %i(update edit destroy)
+  authorize_resource
 
   def index
     @products = Book.search(params[:admin_search]).newest

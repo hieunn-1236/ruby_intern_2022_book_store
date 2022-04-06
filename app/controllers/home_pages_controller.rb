@@ -1,5 +1,6 @@
 class HomePagesController < ApplicationController
   before_action :load_product, only: :show
+  authorize_resource class: false
 
   def index
     @products = Book.search(params[:search]).newest

@@ -2,6 +2,7 @@ class Admin::OrdersController < Admin::AdminController
   before_action :load_order_info, only: :index
   before_action :load_order, except: :index
   before_action :order_params, only: :update
+  authorize_resource
 
   def index
     @pagy, @orders = pagy Order.all.order_newest
