@@ -33,3 +33,7 @@ format_price: !ruby/regexp /\A\d+(?:\.\d{2})?\z/
 default_discount_percent: 0
 max_percent: 100
 max_name_book_length: 255
+number_15: 15
+number_30: 30
+number_10: 10
+number_1: 1

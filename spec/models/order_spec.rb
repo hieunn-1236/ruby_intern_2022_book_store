@@ -21,39 +21,23 @@ RSpec.describe Order, type: :model do
 
   describe "#send_mail_approve" do
     let(:order){FactoryBot.create(:order)}
-    it "check mail to" do
-      mail = order.send_mail_approve
-      expect(mail.to).to eq [order.user.email]
+    subject{order.send_mail_approve}
+    before do
+      allow(ApproveOrderJob).to receive(:perform_later).and_return("mailer")
     end
-
-    it "check mail subject" do
-      mail = order.send_mail_approve
-      expect(mail.subject).to eq "Order has been confirmed"
-    end
-
-    it "check mail deliveries" do
-      ActionMailer::Base.deliveries.should be_empty
-      mail = order.send_mail_approve
-      ActionMailer::Base.deliveries.should_not be_empty
+    it "check mail to sidekiq" do
+      expect(subject).to be_truthy
     end
   end
 
   describe "#send_mail_reject" do
     let(:order){FactoryBot.create(:order)}
-    it "check mail to" do
-      mail = order.send_mail_reject
-      expect(mail.to).to eq [order.user.email]
+    subject{order.send_mail_reject}
+    before do
+      allow(RejectOrderJob).to receive(:perform_later).and_return("mailer")
     end
-
-    it "check mail subject" do
-      mail = order.send_mail_reject
-      expect(mail.subject).to eq "Order has been declined"
-    end
-
-    it "check mail deliveries" do
-      ActionMailer::Base.deliveries.should be_empty
-      mail = order.send_mail_reject
-      ActionMailer::Base.deliveries.should_not be_empty
+    it "check mail to sidekiq" do
+      expect(subject).to be_truthy
     end
   end
 

@@ -11,11 +11,11 @@ class Order < ApplicationRecord
   accepts_nested_attributes_for :order_details, allow_destroy: true
 
   def send_mail_approve
-    UserMailer.approve_order(self).deliver_now
+    ApproveOrderJob.set(wait: Settings.number_15.seconds).perform_later self
   end
 
   def send_mail_reject
-    UserMailer.reject_order(self).deliver_now
+    RejectOrderJob.set(wait: Settings.number_15.seconds).perform_later self
   end
 
   class << self
