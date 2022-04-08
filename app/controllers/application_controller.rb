@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :load_discount
   include SessionsHelper
+  rescue_from CanCan::AccessDenied, with: :access_denied
 
   private
 
@@ -32,5 +33,10 @@ class ApplicationController < ActionController::Base
 
   def load_discount
     @discounts = Discount.all.pluck(:percent, :id)
+  end
+
+  def access_denied
+    flash[:danger] = t "access"
+    redirect_to root_url
   end
 end

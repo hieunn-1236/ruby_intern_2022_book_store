@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :load_user, except: %i(index new create)
   before_action :correct_user, only: %i(edit update)
   before_action :admin_user, only: %i(destroy)
+  authorize_resource
 
   def show; end
 
