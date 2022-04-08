@@ -1,7 +1,35 @@
 <tr>
+  <td><%= book.id %></td>
+  <td><%= book.category_name %></td>
+  <td><%= book.publisher_name %></td>
   <td><%= book.name %></td>
   <td><%= image_tag book.display_image if book.image.attached? %></td>
-  <td><%= book.description %></td>
+  <td>
+    <ul>
+      <li>
+        <%= t "description_book" %>
+      </li>
+      <ul>
+        <li>
+          <%= book.description %>
+        </li>
+      </ul>
+    </ul>
+    <ul>
+      <li>
+        <%= t "author_book" %>
+      </li>
+      <ul>
+        <% if book.book_authors.present? %>
+          <% book.book_authors.each do |at| %>
+            <li>
+              <%= at.author_name %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </ul>
+  </td>
   <td><%= number_to_currency(prices[book_iteration.index]) %></td>
   <td>
     <%= link_to edit_admin_book_path(book) do %>

@@ -1,37 +1,31 @@
 <tr>
   <td><%= order.id %></td>
-  <td><%= render partial: "customer_info",
-                 locals: {customer: order.address} %>
+  <td>
+    <%= order.user.name %>
   </td>
   <td>
-    <%= render partial: "description", collection: order.order_details,
-                                       as: :od %>
-    <ul>
-      <li>
-        <%= t "discount" %>:
-        <%= discount_percent(order.discount) %> %
-      </li>
-      <li>
-        <%= t "total_order" %>:
-        <%= number_to_currency(Order.convert_vnd(
-                                total(order.order_details),
-                                params[:locale]))%>
-      </li>
-    </ul>
+    <%= t "total_order" %>:
+    <%= number_to_currency(Order.convert_vnd(
+                            total(order.order_details),
+                            params[:locale])) %>
   </td>
-  <td><%= l(order.created_at, format: :short) %></td>
+  <td><%= l(order.created_at, format: :long) %></td>
   <td>
-    <%= order.status %>
+    <%= link_to admin_order_path(order.id), remote: true do %>
+      <label class="btn btn-outline-primary">
+        <i class="fas fa-info-circle"></i>
+      </label>
+    <% end %>
   </td>
   <% case order.status.to_sym %>
   <% when :pending %>
-    <td>
+    <td class="table-info">
       <%= render partial: "status_form", locals: {order: order, status: :accepted} %>
       <%= render partial: "status_form", locals: {order: order, status: :rejected} %>
     </td>
   <% when :accepted %>
-    <td><%= t "is_being_delivered" %></td>
+    <td class="table-success"><%= t "is_being_delivered" %></td>
   <% when :rejected %>
-    <td><%= t "was_rejected" %></td>
+    <td class="table-danger"><%= t "was_rejected" %></td>
   <% end %>
 </tr>

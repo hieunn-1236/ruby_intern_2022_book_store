@@ -5,7 +5,15 @@ class Admin::OrdersController < Admin::AdminController
   authorize_resource
 
   def index
-    @pagy, @orders = pagy Order.all.order_newest
+    @pagy, @orders = pagy Order.all.includes([book_details: :book],
+                                             :user, :discount,
+                                             :order_details).order_newest
+  end
+
+  def show
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update
@@ -24,7 +32,7 @@ class Admin::OrdersController < Admin::AdminController
   end
 
   def load_order
-    @order = Order.find_by id: params[:id]
+    @order = Order.includes([book_details: :book]).find_by id: params[:id]
     return if @order
 
     flash[:danger] = t "not_found"

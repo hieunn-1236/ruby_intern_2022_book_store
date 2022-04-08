@@ -790,3 +790,7 @@ a:focus {
   content: ' (*)';
   display:inline;
 }
+
+.table-info .edit_order {
+  display: inline-block;
+}

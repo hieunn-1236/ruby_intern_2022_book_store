@@ -1,6 +1,6 @@
 class BookDetail < ApplicationRecord
   belongs_to :book
-  delegate :name, :price, to: :book, prefix: true, allow_nil: true
+  delegate :name, :id, :price, to: :book, prefix: true, allow_nil: true
   has_many :order_details, dependent: :destroy
   has_many :users, through: :order_details
   validates :edition, presence: true,

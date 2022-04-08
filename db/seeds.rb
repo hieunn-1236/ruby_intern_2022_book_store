@@ -110,7 +110,9 @@ end
 end
 
 300.times do
+  book_detail_id = BookDetail.all.pluck(:id).sample
   OrderDetail.create!(order_id: Order.all.pluck(:id).sample,
-                      book_detail_id:  BookDetail.all.pluck(:id).sample,
-                      quantity: Faker::Number.between(from: 1, to: 5))
+                      book_detail_id: book_detail_id,
+                      quantity: Faker::Number.between(from: 1, to: 5),
+                      price: BookDetail.find(book_detail_id).book.price)
 end
