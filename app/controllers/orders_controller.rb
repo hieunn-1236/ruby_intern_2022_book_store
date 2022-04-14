@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :init_order, only: :create
   authorize_resource
 

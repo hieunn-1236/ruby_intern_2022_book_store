@@ -133,6 +133,7 @@ en:
       products: "Products"
       login: "Login"
       logout: "Log out"
+      signup: "Sign up"
     footer:
       bookstore: "Book Store"
       address: "Address"

@@ -134,6 +134,7 @@ vi:
       products: "Sản phẩm"
       login: "Đăng nhập"
       logout: "Đăng xuất"
+      signup: "Đăng ký"
     footer:
       bookstore: "Book Store"
       address: "Địa chỉ"

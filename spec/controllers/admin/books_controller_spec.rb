@@ -6,7 +6,7 @@ RSpec.describe Admin::BooksController, type: :controller do
   let!(:book_4){FactoryBot.create :book}
 
   before do
-    log_in admin1
+    sign_in admin1
   end
 
   describe "GET #index" do
