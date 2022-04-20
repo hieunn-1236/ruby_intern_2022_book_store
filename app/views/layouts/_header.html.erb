@@ -14,7 +14,7 @@
           <div class="user_option_box">
             <span><%= link_to t("vi"), locale: :vi %></span>
             <span><%= link_to t("en"), locale: :en %></span>
-            <% if logged_in? %>
+            <% if user_signed_in? %>
               <a href="" class="account-link">
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>
@@ -29,7 +29,10 @@
             </a>
             <% else %>
               <span>
-                 <%= link_to t(".login"), login_path %>
+                 <%= link_to t(".login"), new_user_session_path %>
+              </span>
+              <span>
+                 <%= link_to t(".signup"), new_user_registration_path %>
               </span>
             <% end %>
           </div>

@@ -10,7 +10,7 @@ RSpec.describe OrdersController, type: :controller do
       session[:user_id] = user_1.id
       session[:cart] = []
       session[:cart] << {"book_id" => book_detail_1.id, "quantity" => 1}
-      current_user = User.find_by id: session[:user_id]
+      sign_in user_1
       @params = {
         order: {
           address_id: address_1.id,

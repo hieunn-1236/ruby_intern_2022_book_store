@@ -63,18 +63,14 @@ end
                email: email,
                password: password,
                password_confirmation: password,
-               role: 0,
-               activated: true,
-               activated_at: Time.zone.now)
+               role: 0)
 end
 
 User.create!(name: "abc",
              email: "admin@gmail.com",
              password: "password",
              password_confirmation: "password",
-             role: 1,
-             activated: true,
-             activated_at: Time.zone.now)
+             role: 1)
 
 20.times do |n|
   start_at = Faker::Time.between(from: 2.days.ago, to: Time.now)
