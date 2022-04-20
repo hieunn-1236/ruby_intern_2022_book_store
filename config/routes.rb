@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
   scope "(:locale)", locale: /en|vi/ do
+    devise_for :users
     root "home_pages#index"
     as :user do
-      get "/login", to: "devise/session#new"
-      post "/login", to: "devise/session#create"
-      delete "/logout", to: "devise/session#destroy"
+      get "/login", to: "devise/sessions#new"
+      post "/login", to: "devise/sessions#create"
+      delete "/logout", to: "devise/sessions#destroy"
       get "/signup", to: "devise/registration#new"
     end
     delete "/carts", to: "carts#destroy"

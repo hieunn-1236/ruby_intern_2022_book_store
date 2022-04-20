@@ -4,6 +4,8 @@ en:
   title: "Book Store"
   home: "Home"
   search: "Search by name"
+  signup: "Sign Up"
+  login: "Log in"
   invalid: "Invalid email password combination"
   not_exist: "Not exist"
   success: "Success!"
