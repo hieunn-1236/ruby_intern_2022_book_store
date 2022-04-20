@@ -1,0 +1,89 @@
+vi:
+  devise:
+    confirmations:
+      confirmed: "Email của bạn đã được xác nhận."
+      new: 
+        resend_confirmation_instruction: "Gửi lại hướng dẫn xác nhận"
+      send_instructions: "Bạn sẽ nhận được email hướng dẫn xác nhận trong vài phút."
+      send_paranoid_instructions: "Bạn sẽ nhận được email hướng dẫn xác nhận trong vài phút nếu nó tồn tại."
+    failure:
+      already_authenticated: "Bạn đã đăng nhập rồi."
+      inactive: "Tài khoản của bạn chưa được kích hoạt."
+      invalid: "Mật khẩu hoặc %{authentication_keys} không hợp lệ."
+      locked: "Tài khoản của bạn đã bị khóa."
+      last_attempt: "Bạn còn 1 lần vi phạm trước khi bị khóa tài khoản."
+      not_found_in_database: "Mật khẩu hoặc %{authentication_keys} không hợp lệ."
+      timeout: "Hết phiên đăng nhập. Hãy đăng nhập lại."
+      unauthenticated: "Bạn cần đăng kí hoặc đăng nhập trước khi tiếp tục."
+      unconfirmed: "Bạn cần xác nhận email trước khi tiếp tục.."
+    mailer:
+      confirmation_instructions:
+        confirm_link_below: "Bạn có thể xác nhận email tài khoản của mình thông qua liên kết bên dưới:"
+        confirm_my_account: "Xác nhận tài khoản của tôi"
+        subject: "Hướng dẫn xác nhận"
+      reset_password_instructions:
+        access_link: "Mật khẩu của bạn sẽ không thay đổi cho đến khi bạn truy cập vào liên kết ở trên và tạo một mật khẩu mới."
+        change_my_password: "Đổi mật khẩu của tôi"
+        ignore: "Nếu bạn không yêu cầu điều này, vui lòng bỏ qua email này."
+        link: "Ai đó đã yêu cầu một liên kết để thay đổi mật khẩu của bạn. Bạn có thể làm điều này thông qua liên kết dưới đây."
+        subject: "Hướng dẫn đặt lại mật khẩu"
+      unlock_instructions:
+        account_unlock: "Tài khoản của bạn đã bị khóa do có quá nhiều lần đăng nhập không thành công."
+        link_unlock: "Nhấp vào liên kết bên dưới để mở khóa tài khoản của bạn:"
+        subject: "Hướng dẫn mở khóa tài khoản"
+        unlock_my_account: "Mở khóa tài khoản của tôi"
+      email_changed:
+        subject: "Email đã được thay đổi"
+        email_is_being_changed: "Chúng tôi đang liên hệ với bạn để thông báo rằng email của bạn đang được thay đổi thành "
+        email_has_been_changed: "Chúng tôi đang liên hệ với bạn để thông báo rằng email của bạn đã được thay đổi thành "
+      password_change:
+        password_changed: "Chúng tôi đang liên hệ với bạn để thông báo rằng mật khẩu của bạn đã được thay đổi."
+        subject: "Mật khẩu đã được thay đổi"
+    omniauth_callbacks:
+      failure: "Không thể xác thực bởi %{kind} vì %{reason}."
+      success: "Xác thực thành công bởi tài khoản %{kind}."
+    passwords:
+      edit:
+        change_my_password: "Thay đổi mật khẩu của tôi"
+        change_your_password: "Thay đổi mật khẩu của bạn"
+        confirm_new_password: "Xác nhận mật khẩu mới"
+        new_password: "Mật khẩu mới"
+      new:
+        send_me_reset_password_instructions: "Gửi tôi hướng dẫn đặt lại mật khẩu"
+      no_token: "Bạn không thể truy cập trang này nếu không có email thay đổi mật khẩu. Nêú bạn làm thế, hãy chắc chắn link đầy đủ."
+      send_instructions: "Bạn sẽ nhận được email hướng dẫn đặt lại mật khẩu."
+      send_paranoid_instructions: "Nếu email tồn tại, bạn sẽ nhận được link phục hồi mật khẩu qua email."
+      updated: "Mật khẩu thay đổi thành công. Bạn đã đăng nhập."
+      updated_not_active: "Mật khẩu thay đổi thành công."
+    registrations:
+      destroyed: "Tài khoản của bạn đã bị khóa, hẹn gặp lại!."
+      signed_up: "Xin chào! Bạn đã đăng nhập thành công."
+      signed_up_but_inactive: "Đăng ký thành công. Kích hoạt tài khoản của bạn để đăng nhập."
+      signed_up_but_locked: "Đăng ký thành công. Rất tiếc tài khoản của bạn đã bị khóa nên không thể đăng nhập."
+      signed_up_but_unconfirmed: "Một tin nhắn kèm link xác nhận đã được gửi về email của bạn. Vui lòng nhấn link để xác nhận email."
+      updated: "Tài khoản được cập nhật thành công."
+      updated_but_not_signed_in: "Tài khoản được cập nhật thành công, hãy đăng nhập lại vì bạn đã đổi mật khẩu"
+    unlocks:
+      resend_unlock: "Gửi lại hướng dẫn mở khóa"
+      send_instructions: "Bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản."
+      send_paranoid_instructions: "Bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản nếu email tồn tại."
+      unlocked: "Tài khoản đã được mở khóa. Hãy thử đăng nhập."
+    sessions:
+      signed_in: "Đăng nhập thành công."
+      signed_out: "Đăng xuất thành công."
+      already_signed_out: "Đã đăng xuất."
+    shared:
+      links:
+        not_receive_confirm_instruction: "Chưa nhận được hướng dẫn xác nhận?"
+        not_receive_unlock_instruction: "Chưa nhận được hướng dẫn mở khóa?"
+  errors:
+    messages:
+      already_confirmed: "đã được xác nhận, hãy đăng nhập"
+      confirmation_period_expired: "cần xác nhận trong %{period}, hãy tạo yêu cầu mới"
+      expired: "đã hết hạn, hãy tạo yêu cầu mới"
+      not_found: "không tìm thấy"
+      not_locked: "đã bị khóa"
+      not_saved:
+        one: "1 lỗi đã ngăn cản %{resource} này trong việc lưu:"
+        other: "%{count} lỗi đã ngăn cản %{resource} này trong việc lưu:"
+        
