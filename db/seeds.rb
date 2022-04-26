@@ -18,29 +18,6 @@ end
   )
 end
 
-50.times do
-  name = Faker::Book.unique.title
-  description = Faker::Lorem.sentence(word_count: 50)
-  price = Faker::Commerce.price(range: 1..100.0, as_string: true)
-  publish_year = Faker::Date.between(from: '2000-01-01', to: '2022-01-01')
-  Book.create!(name: name,
-               description: description,
-               price: price,
-               publish_year: publish_year,
-               publisher_id: Publisher.all.pluck(:id).sample,
-               category_id: Category.all.pluck(:id).sample
-  )
-end
-
-200.times do
-  edition = "Episode 1"
-  quantity = Faker::Number.between(from: 50, to: 100)
-  BookDetail.create!(edition: edition,
-                     quantity: quantity,
-                     book_id: Book.all.pluck(:id).sample
-  )
-end
-
 5.times do
   name = Faker::Book.author
   description = Faker::Lorem.sentence(word_count: 10)
@@ -50,8 +27,22 @@ end
 end
 
 50.times do
-  BookAuthor.create!(book_id: Book.all.pluck(:id).sample,
-                      author_id: Author.all.pluck(:id).sample
+  name = Faker::Book.unique.title
+  description = Faker::Lorem.sentence(word_count: 50)
+  price = Faker::Commerce.price(range: 1..100.0, as_string: true)
+  publish_year = Faker::Date.between(from: '2000-01-01', to: '2022-01-01')
+  book_details = (1..5).map do |i|
+    {edition: "Episode #{i}",
+     quantity: Faker::Number.between(from: 50, to: 100)}
+  end
+  Book.create!(name: name,
+               description: description,
+               price: price,
+               publish_year: publish_year,
+               publisher_id: Publisher.all.pluck(:id).sample,
+               category_id: Category.all.pluck(:id).sample,
+               book_authors_attributes: [author_id: Author.all.pluck(:id).sample],
+               book_details_attributes: book_details
   )
 end
 
@@ -85,7 +76,7 @@ User.create!(name: "abc",
                    quantity: quantity)
 end
 
-30.times do
+50.times do
   Address.create!(receiver: Faker::Name.name,
                   address: Faker::Address.street_address,
                   phone: 982423412,

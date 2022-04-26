@@ -13,6 +13,14 @@ en:
   error: "Error"
   book_not_found: "Book not found"
   access: "You don't have permission to access this page"
+  error_name: "Book name is mandatory, please fill in"
+  error_price: "Book price is mandatory, please fill in"
+  error_edition: "Book edition is mandatory, please fill in"
+  error_quantity: "Book quantity is mandatory, please fill in"
+  error_description: "Book description is mandatory, please fill in"
+  error_category: "Category is mandatory, please specify one"
+  error_publisher: "Publisher is mandatory, please specify one"
+  error_book_authors: "Book authors is mandatory, please specify one"
   input_name: "Book Name"
   input_name_label: "Name"
   input_price_label: "Price"
@@ -69,6 +77,7 @@ en:
   description_book: "Description"
   author_book: "Authors"
   order_detail: "Order Detail"
+  index: "Index"
 
   admin:
     layouts:

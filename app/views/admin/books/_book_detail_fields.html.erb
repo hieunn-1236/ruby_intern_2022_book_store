@@ -3,6 +3,7 @@
     <%= f.label :edition, t("edition") %>
     <%= f.text_field :edition,
           {class: "form-control", placeholder: t("input_edition")} %>
+    <%= errors_for f, :edition %>
   </div>
   <div class="col-md-5 required">
     <%= f.label :quantity, t("quantity") %>
@@ -10,6 +11,7 @@
           {class: "form-control",
           placeholder: t("input_quantity"),
           min: Settings.min_val} %>
+    <%= errors_for f, :quantity %>
   </div>
   <div class="links col-md-1">
     <label><%= t "action" %></label>

@@ -19,6 +19,7 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
+            <th><%= t "index" %></th>
             <th><%= t ".book_id" %></th>
             <th><%= t "category" %></th>
             <th><%= t "publisher" %></th>
@@ -30,7 +31,7 @@
           </tr>
         </thead>
         <tbody>
-          <%= render @new_products, prices: @prices %>
+          <%= render @new_products, prices: @prices, books: @products %>
         </tbody>
       </table>
     </div>

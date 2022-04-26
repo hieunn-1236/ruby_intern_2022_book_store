@@ -8,6 +8,7 @@
       <table class=" table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr class="table-info">
+            <th><%= t "index" %></th>
             <th><%= t "order_id" %></th>
             <th><%= t "customer_info" %></th>
             <th><%= t "description" %></th>
@@ -18,7 +19,9 @@
         </thead>
         <tbody>
           <%== pagy_bootstrap_nav(@pagy) %>
-          <%= render @orders %>
+          <% @orders.each.with_index(@pagy.offset + 1) do |order, index| %>
+            <%= render partial: "order", locals: {order: order, index: index} %>
+          <% end %>
         </tbody>
       </table>
     </div>

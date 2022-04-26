@@ -15,6 +15,7 @@
           <table class=" table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr class="table-info">
+                <th><%= t "index" %></th>
                 <th><%= t ".book_id" %></th>
                 <th><%= t "book_name" %></th>
                 <th><%= t "book_edition" %></th>
@@ -27,7 +28,7 @@
               <%= render partial: "description", collection: order.order_details,
                                             as: :od %>
               <tr class="table-warning">
-                <td colspan="5">
+                <td colspan="6">
                   <%= t "discount" %>
                 </td>
                 <td>
@@ -35,7 +36,7 @@
                 </td>
               </tr>
               <tr class="table-warning">
-                <td colspan="5">
+                <td colspan="6">
                   <%= t "total_order" %>
                 </td>
                 <td>
