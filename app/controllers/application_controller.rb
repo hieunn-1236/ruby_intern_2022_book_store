@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   rescue_from CanCan::AccessDenied, with: :access_denied
 
+  def after_sign_in_path_for _resource
+    admin_books_path
+  end
+
   private
 
   def load_params

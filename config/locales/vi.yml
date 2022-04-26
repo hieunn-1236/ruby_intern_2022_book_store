@@ -1,4 +1,6 @@
 vi:
+  sign_in_with: "Đăng nhập với"
+  forgot_password: "Quên mật khẩu"
   vi: "VI"
   en: "EN"
   all: "Tất cả"

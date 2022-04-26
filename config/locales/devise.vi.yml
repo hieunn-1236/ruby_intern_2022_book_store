@@ -2,8 +2,8 @@ vi:
   devise:
     confirmations:
       confirmed: "Email của bạn đã được xác nhận."
-      new: 
-        resend_confirmation_instruction: "Gửi lại hướng dẫn xác nhận"
+      new:
+        resend_confirmation_instructions: "Gửi lại hướng dẫn xác nhận"
       send_instructions: "Bạn sẽ nhận được email hướng dẫn xác nhận trong vài phút."
       send_paranoid_instructions: "Bạn sẽ nhận được email hướng dẫn xác nhận trong vài phút nếu nó tồn tại."
     failure:
@@ -68,6 +68,8 @@ vi:
       send_instructions: "Bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản."
       send_paranoid_instructions: "Bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản nếu email tồn tại."
       unlocked: "Tài khoản đã được mở khóa. Hãy thử đăng nhập."
+      new:
+        resend_unlock: "Gửi lại hướng dẫn mở khóa"
     sessions:
       signed_in: "Đăng nhập thành công."
       signed_out: "Đăng xuất thành công."
@@ -86,4 +88,3 @@ vi:
       not_saved:
         one: "1 lỗi đã ngăn cản %{resource} này trong việc lưu:"
         other: "%{count} lỗi đã ngăn cản %{resource} này trong việc lưu:"
-        

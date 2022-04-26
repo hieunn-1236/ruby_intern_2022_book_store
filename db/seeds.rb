@@ -55,7 +55,8 @@ end
                email: email,
                password: password,
                password_confirmation: password,
-               role: 0)
+               role: 0,
+               confirmed_at: Time.now)
 end
 
 User.create!(name: "abc",

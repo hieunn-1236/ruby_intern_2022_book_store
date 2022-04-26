@@ -2,22 +2,23 @@
 <h1 class="h3 mb-2 text-gray-800">
   <%= t ".order_management" %>
 </h1>
-<div class="filter">
-  <%= search_form_for @q, url: admin_orders_path, class: "search_form" do |f| %>
-    <div>
-      <%= f.label t("customer_name") %>
-      <%= f.search_field :user_name_cont, class: "form-control" %>
+<div class="form-group">
+  <%= search_form_for @q, url: admin_orders_path, class: "row g-3" do |f| %>
+    <div class="col-md-4">
+      <%= f.label t("customer_name"), class: "form-label" %>
+      <%= f.search_field :user_name_cont, class: "form-control",
+                                          placeholder: t("search") %>
     </div>
-    <div>
-      <%= f.label t("by_date") %>
+    <div class="col-md-4">
+      <%= f.label t("by_date"), class: "form-label" %>
       <%= f.date_field :created_at_date_equals, class: "form-control" %>
     </div>
     <div class="col-md-2">
-      <%= f.label t("status") %>
-      <%= f.select :status_eq, Order.statuses, include_blank: t(".all"), class: "form-control" %>
+      <%= f.label t("status"), class: "form-label" %>
+      <%= f.select :status_eq, Order.statuses, include_blank: t(".all"), class: "form-select" %>
     </div>
     <div class="col-md-2">
-      <%= submit_tag t("filter"), {class: "btn btn-primary"} %>
+      <%= submit_tag t("filter"), class: "btn btn-primary form-control" %>
     </div>
   <% end %>
 </div>
