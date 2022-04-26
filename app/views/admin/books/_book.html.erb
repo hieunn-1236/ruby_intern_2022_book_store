@@ -33,18 +33,26 @@
   </td>
   <td><%= number_to_currency(prices[book_iteration.index]) %></td>
   <td>
-    <%= link_to edit_admin_book_path(book) do %>
-      <label class="btn btn-warning">
-        <i class="fa-solid fa-pen-to-square"></i>
-      </label>
-    <% end %>
-    <%= link_to admin_book_path(book),method: :delete,
-                                      data: {confirm: t("delete_book?")},
-                                      remote: true,
-                                      class: "book_delete" do %>
-      <label class="btn btn-danger">
-        <i class="fa-solid fa-trash-can"></i>
-      </label>
+    <% if book.deleted_at.nil? %>
+      <%= link_to edit_admin_book_path(book) do %>
+        <label class="btn btn-warning">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </label>
+      <% end %>
+      <%= link_to admin_book_path(book),method: :delete,
+                                        data: {confirm: t("delete_book?")},
+                                        remote: true,
+                                        class: "book_delete" do %>
+        <label class="btn btn-danger">
+          <i class="fa-solid fa-trash-can"></i>
+        </label>
+      <% end %>
+    <% else %>
+      <%= link_to restore_admin_book_path(book), class: "book_restore", remote: true do %>
+        <label class="btn btn-warning">
+          <i class="fa-solid fa-recycle"></i>
+        </label>
+      <% end %>
     <% end %>
   </td>
 </tr>

@@ -25,7 +25,7 @@
               </tr>
             </thead>
             <tbody>
-              <%= render partial: "description", collection: order.order_details,
+              <%= render partial: "description", collection: order.order_details.with_deleted,
                                             as: :od %>
               <tr class="table-warning">
                 <td colspan="6">
@@ -41,7 +41,7 @@
                 </td>
                 <td>
                   <%= number_to_currency(Order.convert_vnd(
-                                          total(order.order_details),
+                                          total(order.order_details.with_deleted),
                                           params[:locale]))%>
                 </td>
               </tr>
