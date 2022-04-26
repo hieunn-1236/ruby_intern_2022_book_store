@@ -3,13 +3,10 @@
     <div class="header_top">
       <div class="container-fluid">
         <div class="top_nav_container">
-          <%= form_tag(home_pages_path, method: :get, class: "search_form") do %>
-            <%= text_field_tag :search, params[:search],
-                                        class: "form-control",
-                                        placeholder: t("search") %>
-            <%= button_tag(type: "submit", class: "btn btn-default") do %>
-              <i class="fa fa-search"></i>
-            <% end %>
+          <%= search_form_for @q, url: home_pages_path, class: "search_form" do |f| %>
+            <%= f.search_field :description_or_name_cont, class: "form-control",
+                                           placeholder: t("search") %>
+            <%= f.submit t("button_search"), {class: "btn btn-primary"} %>
           <% end %>
           <div class="user_option_box">
             <span><%= link_to t("vi"), locale: :vi %></span>

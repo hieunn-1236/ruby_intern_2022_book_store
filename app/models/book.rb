@@ -45,9 +45,17 @@ class Book < ApplicationRecord
     image.variant resize_to_limit: Settings.image_limit
   end
 
+  ransacker :created_at, type: :date do
+    Arel.sql("date(created_at)")
+  end
+
   class << self
     def dollar_to_vnds books
       books.map(&:dollar_to_vnd)
+    end
+
+    def ransackable_attributes _auth_object = nil
+      super %w(created_at) + _ransackers.keys
     end
   end
 end

@@ -42,7 +42,8 @@ end
                publisher_id: Publisher.all.pluck(:id).sample,
                category_id: Category.all.pluck(:id).sample,
                book_authors_attributes: [author_id: Author.all.pluck(:id).sample],
-               book_details_attributes: book_details
+               book_details_attributes: book_details,
+               created_at: (rand*30).days.ago
   )
 end
 

@@ -1,4 +1,45 @@
 <% provide :title, t(".title") %>
+<div class="filter">
+  <%= search_form_for @q, url: home_pages_path, class: "row g-3" do |f| %>
+    <div class="col-md-2">
+      <label><%= t "category" %>:</label>
+      <%= f.select :category_id_eq, options_for_select(@categories, @q.category_id_eq),
+                                                      {},
+                                                      class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <label><%= t "publisher" %>:</label>
+      <%= f.select :publisher_id_eq, options_for_select(@publishers, @q.publisher_id_eq),
+                                                      {},
+                                                      class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <label><%= t "minimum_price" %>:</label>
+      <%= f.number_field :price_gteq, class: "form-control",
+                                      placeholder: t("input_price"),
+                                      min: Settings.min_book_price_length,
+                                      max: Settings.max_book_price_length %>
+    </div>
+    <div class="col-md-2">
+      <label><%= t "maximum_price" %>:</label>
+      <%= f.number_field :price_lteq, class: "form-control",
+                                      placeholder: t("input_price"),
+                                      min: Settings.min_book_price_length,
+                                      max: Settings.max_book_price_length %>
+    </div>
+    <div class="col-md-2">
+      <label><%= t "by_date" %>:</label>
+        <%= f.date_field :created_at_date_equals, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <label class="invisible" style="visibility:none">.</label>
+      <%= submit_tag t("filter"), class: "btn btn-primary form-control" %>
+    </div>
+  <% end %>
+  <div class="created-at">
+    <%= sort_link @q, :created_at, t("created_at"), class: "btn btn-primary" %>
+  </div>
+</div>
 <section class="product_section layout_padding">
   <div class="container">
     <div class="heading_container heading_center">
