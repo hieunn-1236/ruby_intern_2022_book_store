@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users,
+             controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   scope "(:locale)", locale: /en|vi/ do
-    devise_for :users
     root "home_pages#index"
     as :user do
       get "/login", to: "devise/sessions#new"
