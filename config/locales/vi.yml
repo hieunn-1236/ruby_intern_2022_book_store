@@ -96,6 +96,8 @@ vi:
         books: "Sách"
         orders: "Quản lý đơn hàng"
         products: "Quản lý sản phẩm"
+        analyst: "Biểu đồ phân tích"
+        logout: "Đăng xuất"
     books:
       index:
         books: "Sách"
@@ -134,6 +136,17 @@ vi:
       index:
         title: "Quản lý order"
         order_management: "Quản lý order"
+    charts:
+      index:
+        title: "Biểu đồ phân tích"
+        time: "Thời gian"
+        title_order_group_by_day: "Biểu đồ order theo ngày trong tháng"
+        title_order_group_by_day_of_week: "Biểu đồ order theo ngày trong tuần"
+        title_order_group_by_category: "Biểu đồ phân tích số lượt mua theo danh mục"
+        title_order_group_status: "Biểu đồ trạng thái order"
+        value_order_group_by_day: "Số lượng"
+        value_order_group_by_day_of_week: "Số lượng"
+        value_order_group_by_category: "Số lượng"
     approve_order: "Đơn hàng đã được xác thực"
     reject_order : "Đơn hàng đã bị từ chối"
 

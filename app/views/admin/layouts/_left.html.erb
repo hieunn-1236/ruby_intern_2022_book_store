@@ -18,6 +18,13 @@
   </li>
   <hr class="sidebar-divider">
   <li class="nav-item">
+    <%= link_to admin_charts_path, class: "nav-link collapsed" do %>
+      <i class="fa-solid fa-chart-line"></i>
+      <span><%= t ".analyst" %></span>
+    <% end %>
+  </li>
+  <hr class="sidebar-divider">
+  <li class="nav-item">
     <div class = "nav-link collapsed">
       <i class="fa-solid fa-language"></i>
       <%= link_to t("vi"), locale: :vi, class: "vi_en_white" %> |

@@ -94,6 +94,8 @@ en:
         books: "Books"
         orders: "Order management"
         products: "Product management"
+        analyst: "Analysis chart"
+        logout: "Logout"
     books:
       index:
         books: "Books"
@@ -131,6 +133,17 @@ en:
       index:
         title: "Order Management"
         order_management: "Order Management"
+    charts:
+      index:
+        title: "Analysis chart"
+        time: "Time"
+        title_order_group_by_day: "Order chart by day of the month"
+        title_order_group_by_day_of_week: "Order chart by day of the week"
+        title_order_group_by_category: "Analysis chart of purchase quantity by category"
+        title_order_group_status: "Order status chart"
+        value_order_group_by_day: "Quantity"
+        value_order_group_by_day_of_week: "Quantity"
+        value_order_group_by_category: "Quantity"
     approve_order: "Order has been confirmed"
     reject_order : "Order has been declined"
 
