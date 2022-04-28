@@ -2,14 +2,15 @@ require "rails_helper"
 
 RSpec.describe OrdersController, type: :controller do
   let!(:user_1){FactoryBot.create :user}
-  let!(:book_detail_1){FactoryBot.create :book_detail}
+  let!(:book_1){FactoryBot.create :book}
+  let!(:book_detail_1){FactoryBot.create :book_detail, book_id: book_1.id}
   let!(:address_1){FactoryBot.create :address}
   let!(:discount_1){FactoryBot.create :discount}
   describe "POST #create" do
     before do
       session[:user_id] = user_1.id
       session[:cart] = []
-      session[:cart] << {"book_id" => book_detail_1.id, "quantity" => 1}
+      session[:cart] << {"book_id" => book_1.id, "book_detail_id" => book_detail_1.id, "quantity" => 1, "price" => book_1.price}
       sign_in user_1
       @params = {
         order: {

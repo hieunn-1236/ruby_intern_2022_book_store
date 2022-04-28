@@ -7,7 +7,7 @@
   <td>
     <%= t "total_order" %>:
     <%= number_to_currency(Order.convert_vnd(
-                            total(order.order_details),
+                            total(order.order_details.with_deleted),
                             params[:locale])) %>
   </td>
   <td><%= l(order.created_at, format: :long) %></td>

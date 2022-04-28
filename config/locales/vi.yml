@@ -129,6 +129,9 @@ vi:
       destroy:
         book_deleted: "Xóa sách thành công"
         delete_fail: "Xóa sách thất bại"
+      restore:
+        book_restored: "Phục hồi thành công"
+        restore_fail: "Phục hồi thất bại"
     orders:
       show:
         order_detail: "Chi tiết đơn hàng"

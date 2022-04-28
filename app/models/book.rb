@@ -35,6 +35,8 @@ class Book < ApplicationRecord
   scope :search,
         ->(search){where("name LIKE ?", "%#{search}%") if search.present?}
 
+  acts_as_paranoid
+
   def dollar_to_vnd
     price * Settings.dollar_to_vnd if price.present?
   end

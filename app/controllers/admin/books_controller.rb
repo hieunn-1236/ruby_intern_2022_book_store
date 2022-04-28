@@ -4,7 +4,7 @@ class Admin::BooksController < Admin::AdminController
   authorize_resource
 
   def index
-    @products = Book.search(params[:admin_search]).newest
+    @products = Book.with_deleted.search(params[:admin_search]).newest
     @pagy, @new_products = pagy @products, items: Settings.page_items
     return @prices = @new_products.pluck(:price) unless is_vi_location?
 
@@ -46,6 +46,17 @@ class Admin::BooksController < Admin::AdminController
         format.js{flash.now[:notice] = t ".book_deleted"}
       else
         format.js{flash.now[:danger] = t ".delete_fail"}
+      end
+    end
+  end
+
+  def restore
+    @book = Book.with_deleted.find_by(id: params[:id])
+    respond_to do |format|
+      if @book.restore(recursive: true)
+        format.js{flash.now[:notice] = t ".book_restored"}
+      else
+        format.js{flash.now[:danger] = t ".restore_fail"}
       end
     end
   end

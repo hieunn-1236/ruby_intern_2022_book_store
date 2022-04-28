@@ -13,7 +13,11 @@ Rails.application.routes.draw do
     resources :home_pages, only: %i(index show)
     namespace :admin do
       root "books#index"
-      resources :books
+      resources :books do
+        member do
+          get :restore
+        end
+      end
       resources :charts, only: :index
       resources :orders, only: %i(index update show)
     end

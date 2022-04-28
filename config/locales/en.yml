@@ -25,7 +25,7 @@ en:
   input_name_label: "Name"
   input_price_label: "Price"
   input_price: "Book's price"
-  edition: "Edidion"
+  edition: "Edition"
   description: "Description"
   image: "Image"
   author: "Authors"
@@ -126,6 +126,9 @@ en:
       destroy:
         book_deleted: "Book deleted"
         delete_fail: "Delete fail"
+      restore:
+        book_restored: "Book restored"
+        restore_fail: "Restore fail"
     orders:
       show:
         order_detail: "Order detail"
