@@ -1,11 +1,15 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   before_action :set_locale
-  before_action :load_discount
+  before_action :load_discount, :load_params
   include SessionsHelper
   rescue_from CanCan::AccessDenied, with: :access_denied
 
   private
+
+  def load_params
+    @q = Book.ransack(params[:q])
+  end
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
