@@ -63,7 +63,7 @@ vi:
   order_id: "Order ID"
   receiver_name: "Tên người nhận"
   address: "Địa chỉ"
-  phone: Số điện thoại"
+  phone: "Số điện thoại"
   discount: "Giảm giá"
   total_order_detail: "Thành tiền"
   total_order: "Tổng tiền"
@@ -94,8 +94,8 @@ vi:
         my_account: "Tài khoản"
         cart: "Giỏ hàng"
         bookstore: "Book Store"
-        login: "Log in"
-        logout: "Log out"
+        login: "Đăng nhập"
+        logout: "Đăng xuất"
       footer:
         bookstore: "Book Store"
         address: "Địa chỉ"
@@ -146,6 +146,7 @@ vi:
       index:
         title: "Quản lý order"
         order_management: "Quản lý order"
+        all: "Tất cả"
     charts:
       index:
         title: "Biểu đồ phân tích"

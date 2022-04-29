@@ -2,6 +2,25 @@
 <h1 class="h3 mb-2 text-gray-800">
   <%= t ".order_management" %>
 </h1>
+<div class="filter">
+  <%= search_form_for @q, url: admin_orders_path, class: "search_form" do |f| %>
+    <div>
+      <%= f.label t("customer_name") %>
+      <%= f.search_field :user_name_cont, class: "form-control" %>
+    </div>
+    <div>
+      <%= f.label t("by_date") %>
+      <%= f.date_field :created_at_date_equals, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label t("status") %>
+      <%= f.select :status_eq, Order.statuses, include_blank: t(".all"), class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= submit_tag t("filter"), {class: "btn btn-primary"} %>
+    </div>
+  <% end %>
+</div>
 <div class="card shadow mb-4">
   <div class="card-body">
     <div class="table-responsive table-striped">

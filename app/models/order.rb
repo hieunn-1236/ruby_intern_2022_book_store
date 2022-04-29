@@ -18,11 +18,23 @@ class Order < ApplicationRecord
     RejectOrderJob.set(wait: Settings.number_15.seconds).perform_later self
   end
 
+  ransacker :created_at, type: :date do
+    Arel.sql("date(`orders`.`created_at`)")
+  end
+
   class << self
     def convert_vnd price, locale
       return price if locale == "en"
 
       price * Settings.dollar_to_vnd
+    end
+
+    def ransackable_attributes _auth_object = nil
+      super %w(created_at) + _ransackers.keys
+    end
+
+    def ransackable_associations _auth_object = nil
+      reflect_on_all_associations.map{|a| a.name.to_s}
     end
   end
 end
