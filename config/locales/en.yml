@@ -143,6 +143,7 @@ en:
       index:
         title: "Order Management"
         order_management: "Order Management"
+        all: "All"
     charts:
       index:
         title: "Analysis chart"
