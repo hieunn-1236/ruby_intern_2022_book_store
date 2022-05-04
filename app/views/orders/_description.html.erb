@@ -1,0 +1,26 @@
+<tr>
+  <td>
+    <%= od_counter + 1 %>
+  </td>
+  <td>
+    <%= od.book_detail.book_id %>
+  </td>
+  <td>
+    <%= od.book_detail.book_name %>
+  </td>
+  <td>
+    <%= od.book_detail_edition %>
+  </td>
+  <td>
+    <%= number_to_currency(Order.convert_vnd(od.price, params[:locale])) %>
+  </td>
+  <td>
+    <%= od.quantity %>
+  </td>
+  <td>
+    <%= number_to_currency(Order.convert_vnd(
+                                  total_on_book(od.quantity,
+                                                od.price),
+                                params[:locale])) %>
+  </td>
+</tr>

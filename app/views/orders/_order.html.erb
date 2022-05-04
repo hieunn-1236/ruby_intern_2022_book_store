@@ -1,6 +1,5 @@
 <tr>
   <td><%= index %></td>
-  <td><%= order.id %></td>
   <td>
     <%= order.user.name %>
   </td>
@@ -12,7 +11,7 @@
   </td>
   <td><%= l(order.created_at, format: :long) %></td>
   <td>
-    <%= link_to admin_order_path(order.id), remote: true do %>
+    <%= link_to order_path(order.id), remote: true do %>
       <label class="btn btn-outline-primary">
         <i class="fas fa-info-circle"></i>
       </label>
@@ -21,8 +20,7 @@
   <% case order.status.to_sym %>
   <% when :pending %>
     <td class="table-info">
-      <%= render partial: "status_form", locals: {order: order, status: :accepted} %>
-      <%= render partial: "status_form", locals: {order: order, status: :rejected} %>
+      <%= render partial: "status_form", locals: {order: order, status: :canceled} %>
     </td>
   <% when :accepted %>
     <td class="table-success"><%= t "is_being_delivered" %></td>

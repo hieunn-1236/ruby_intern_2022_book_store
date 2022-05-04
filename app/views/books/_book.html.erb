@@ -2,11 +2,6 @@
   <div class="box">
     <div class="img-box">
       <%= image_tag load_image(book) %>
-      <a href="" class="add_cart_btn">
-        <span>
-          <%= t ".info" %>
-        </span>
-      </a>
     </div>
     <div class="detail-box">
       <h5> <%= link_to book.name, home_page_path(book) %> </h5>

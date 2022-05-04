@@ -1,10 +1,10 @@
 module CartsHelper
   def load_book id
-    book = Book.find_by id: id
-    return book if book
+    Book.find_by id: id
+  end
 
-    flash[:danger] = t "not_exist"
-    redirect_to root_url
+  def load_book_detail id
+    BookDetail.find_by id: id
   end
 
   def total_on_book quantity, price

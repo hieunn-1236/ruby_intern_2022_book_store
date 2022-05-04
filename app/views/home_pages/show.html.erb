@@ -11,21 +11,9 @@
     </div>
     <div class="p-product-configuration">
       <div class="p-cable-config">
-        <span><%= t ".options" %></span>
-        <%= select_tag :book_id,
-            options_for_select(option_selct_book_details(@book_details)),
-                               selected: @book_details.first.id,
-                               class: "form form-control",
-                               id: "book_option" %>
         <p>
           <span><%= t ".publish_year" %></span>
           <%= @product.publish_year %>
-        </p>
-        <p>
-          <span><%= t ".quantity" %></span>
-          <span id="quantity_book">
-            <%= @product.book_details.first.quantity %>
-          </span>
         </p>
         <p>
           <span><%= t ".publisher" %></span>
@@ -44,11 +32,15 @@
     <div class="p-product-price">
       <span><%= number_to_currency(@price) %></span>
       <%= form_for(Cart.new, url: carts_path) do |f| %>
-        <%= f.number_field :quantity, value: 1 %>
+        <%= f.number_field :quantity, value: 1, min: Settings.min_quantity, max: @product.book_details.first.quantity %>
         <%= f.number_field :book_id, value: @product.id, hidden: true %>
+        <%= f.select :book_detail_id,
+            options_for_select(option_selct_book_details(@product.book_details)),
+                               selected: @product.book_details.first.id,
+                               class: "form form-control",
+                               id: "book_option" %>
         <%= f.submit t(".add_to_cart"), class: "p-cart-btn" %>
       <% end %>
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
       </a>
     </div>
   </div>

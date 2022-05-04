@@ -68,6 +68,7 @@ en:
   are_you_sure: "Are you sure"
   is_being_delivered: "Is being delivered"
   was_rejected: "Was rejected"
+  was_canceled: "Was canceled"
   update_order_fail: "Update order fail"
   update_order_success: "Update order success"
   order_information: "Order information #ID: "
@@ -75,7 +76,8 @@ en:
   mail_info: "This mail notifies you of your order number "
   order_success: " ordered successfully"
   order_was_rejected: " order was rejected"
-  update_order_reject: "Order has been reject"
+  update_order_reject: "Order has been rejected"
+  update_order_cancel: "Order has been canceled"
   time:
     formats:
       default: "%a, %d %b %Y %H:%M:%S %z"
@@ -169,6 +171,7 @@ en:
       login: "Login"
       logout: "Log out"
       signup: "Sign up"
+      orders: "Order"
     footer:
       bookstore: "Book Store"
       address: "Address"
@@ -216,3 +219,7 @@ en:
       quantity: "Quantity"
       subtotal: "Subtotal"
       order: "Order"
+  orders:
+    index:
+      title: "Order Management"
+      order_management: "Order Management"

@@ -70,6 +70,7 @@ vi:
   are_you_sure: "Bạn có chắc chắn?"
   is_being_delivered: "Đang được vận chuyển"
   was_rejected: "Đã từ chối"
+  was_canceled: "Đã hủy"
   update_order_fail: "Cập nhật đơn hàng thất bại"
   update_order_success: "Cập nhật đơn hàng thành công"
   order_information: "Thông tin đơn hàng #ID: "
@@ -78,6 +79,7 @@ vi:
   order_success: " đặt hàng thành công"
   order_was_rejected: " đặt hàng bị từ chối"
   update_order_reject: "Đơn hàng đã bị từ chối"
+  update_order_cancel: "Đơn hàng đã bị hủy"
   index: "STT"
   time:
     formats:
@@ -172,6 +174,7 @@ vi:
       login: "Đăng nhập"
       logout: "Đăng xuất"
       signup: "Đăng ký"
+      orders: "Đơn hàng"
     footer:
       bookstore: "Book Store"
       address: "Địa chỉ"
@@ -219,3 +222,7 @@ vi:
       quantity: "Số lượng"
       subtotal: "Đơn giá"
       order: "Đặt hàng"
+  orders:
+    index:
+      title: "Quản lý đơn hàng"
+      order_management: "Quản lý đơn hàng"

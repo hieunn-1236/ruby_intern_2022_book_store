@@ -30,10 +30,7 @@
                           {},
                           {class: "form form-control"} %>
       <%= f.label :discount %>
-      <%= f.select :discount_id,
-        options_for_select(@discounts),
-                          {},
-                          {class: "form form-control"} %>
+      <p><%= f.number_field :discount_id %></p>
       <%= f.submit t(".order") %>
     <% end %>
   </div>

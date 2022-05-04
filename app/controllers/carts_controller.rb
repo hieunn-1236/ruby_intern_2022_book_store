@@ -14,7 +14,7 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart.delete_if{|line_item| line_item["book_id"] == params[:book_id].to_i}
+    @cart.delete_if{|i| i["book_detail_id"] == params[:book_detail_id].to_i}
 
     respond_to do |format|
       format.html{redirect_to carts_path}
@@ -37,7 +37,7 @@ class CartsController < ApplicationController
   private
   def select_item
     @cart.each do |line_item|
-      if line_item["book_id"] == params[:book_id].to_i
+      if line_item["book_detail_id"] == params[:book_detail_id].to_i
         @selected_item = line_item
       end
     end
@@ -54,8 +54,7 @@ class CartsController < ApplicationController
     else
       @cart << {
         "book_id": @cart_params["book_id"].to_i,
-        "book_detail_id": BookDetail.find_by(book_id:
-          @cart_params["book_id"].to_i).id,
+        "book_detail_id": @cart_params["book_detail_id"].to_i,
         "quantity": @cart_params["quantity"].to_i,
         "price": Book.find_by(id: @cart_params["book_id"].to_i).price
       }
@@ -64,6 +63,6 @@ class CartsController < ApplicationController
 
   def load_current_item
     @current_item =
-      @cart.find{|item| item["book_id"] == @cart_params["book_id"].to_i}
+      @cart.find{|i| i["book_detail_id"] == @cart_params["book_detail_id"].to_i}
   end
 end

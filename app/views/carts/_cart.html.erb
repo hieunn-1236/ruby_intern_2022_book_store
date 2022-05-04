@@ -1,4 +1,6 @@
 <% book = load_book(item["book_id"]) %>
+<% book_detail = load_book_detail(item["book_detail_id"]) %>
+
 <tr>
   <td>
     <div class="product-item">
@@ -7,7 +9,7 @@
           <%= book.name %>
         </h4>
         <span>
-          <em><%= book.description %></em>
+          <em><%= book_detail.edition %></em>
         </span>
         <span>
           <em> <%= number_to_currency(Order.convert_vnd(book.price,params[:locale])) %></em>
@@ -17,9 +19,9 @@
   </td>
   <td class="text-center">
     <div class="count-input">
-      <span><%= button_to "+", {operator: "+", book_id: item["book_id"]}, method: :put %></span>
+      <span><%= button_to "+", {operator: "+", book_detail_id: item["book_detail_id"]}, method: :put %></span>
       <span><%= item["quantity"] %></span>
-      <span><%= button_to "-", {operator: "-", book_id: item["book_id"]}, method: :put %></span>
+      <span><%= button_to "-", {operator: "-", book_detail_id: item["book_detail_id"]}, method: :put %></span>
     </div>
   </td>
   <td class="text-center text-lg text-medium">
@@ -27,7 +29,7 @@
   </td>
   <td class="text-center">
     <a class="remove-from-cart" >
-      <%= button_to "X", {book_id: item["book_id"]} , method: :delete %>
+      <%= button_to "X", {book_detail_id: item["book_detail_id"]} , method: :delete %>
     </a>
   </td>
 </tr>
