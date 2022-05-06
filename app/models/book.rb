@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
   BOOK_ATTRS = %i(name description price publish_year publisher_id
     category_id image).push(book_details_attributes: [:id, :edition, :quantity,
-    :destroy]).push(author_ids: []).freeze
+    :_destroy]).push(author_ids: []).freeze
   belongs_to :category
   belongs_to :publisher
   has_many :book_details, dependent: :destroy

@@ -62,7 +62,8 @@ User.create!(name: "abc",
              email: "admin@gmail.com",
              password: "password",
              password_confirmation: "password",
-             role: 1)
+             role: 1,
+             confirmed_at: Time.now)
 
 20.times do |n|
   start_at = Faker::Time.between(from: 2.days.ago, to: Time.now)
