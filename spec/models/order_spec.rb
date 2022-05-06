@@ -14,7 +14,7 @@ RSpec.describe Order, type: :model do
   describe "Enums" do
     it {
       should define_enum_for(:status)
-        .with_values(pending: 0, accepted: 1, rejected: 2)
+        .with_values(pending: 0, accepted: 1, rejected: 2, canceled: 3)
         .with_suffix
     }
   end

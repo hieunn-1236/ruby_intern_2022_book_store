@@ -4,10 +4,11 @@ class Order < ApplicationRecord
   belongs_to :address, optional: true
   has_many :order_details, dependent: :destroy
   has_many :book_details, ->{with_deleted}, through: :order_details
-  enum status: {pending: 0, accepted: 1, rejected: 2}, _suffix: true
+  enum status: {pending: 0, accepted: 1, rejected: 2,
+                canceled: 3}, _suffix: true
   delegate :name, to: :user, prefix: true, allow_nil: true
   scope :order_newest, ->{order(created_at: :desc)}
-
+  scope :by_user, ->(user_id){where(user_id: user_id)}
   accepts_nested_attributes_for :order_details, allow_destroy: true
 
   def send_mail_approve
