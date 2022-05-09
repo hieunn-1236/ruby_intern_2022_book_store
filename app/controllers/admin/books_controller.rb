@@ -53,7 +53,7 @@ class Admin::BooksController < Admin::AdminController
   def restore
     @book = Book.with_deleted.find_by(id: params[:id])
     respond_to do |format|
-      if @book.restore(recursive: true)
+      if @book&.restore(recursive: true)
         format.js{flash.now[:notice] = t ".book_restored"}
       else
         format.js{flash.now[:danger] = t ".restore_fail"}

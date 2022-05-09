@@ -116,4 +116,20 @@ RSpec.describe Admin::BooksController, type: :controller do
       end
     end
   end
+
+  describe "Restore book" do
+    context "When restore success" do
+      it "should flash notice restore success" do
+        get :restore, xhr: true, params: {id: book_4.id}
+        expect(flash.now[:notice]).to eq I18n.t("admin.books.restore.book_restored")
+      end
+    end
+
+    context "When restore fail" do
+      it "should flash danger restore fail" do
+        get :restore, xhr: true, params: {id: -1}
+        expect(flash.now[:danger]).to eq I18n.t("admin.books.restore.restore_fail")
+      end
+    end
+  end
 end
