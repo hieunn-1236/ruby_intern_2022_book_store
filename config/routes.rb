@@ -3,6 +3,10 @@ Rails.application.routes.draw do
              controllers: {omniauth_callbacks: "users/omniauth_callbacks",
                            registrations: "registrations"}
   scope "(:locale)", locale: /en|vi/ do
+    mount Api::Base, at: "/"
+    mount GrapeSwaggerRails::Engine, at: "/documentation"
+    require "sidekiq/web"
+      mount Sidekiq::Web => "/sidekiq"
     root "home_pages#index"
     as :user do
       get "/login", to: "devise/sessions#new"
